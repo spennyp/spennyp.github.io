@@ -2,8 +2,8 @@ function changeColor() {
     var colors = ["salmon", "aqua","yellow","#cc99ff","#99ffcc","#ffff99"],
     selectedColor = colors[Math.floor(Math.random()*colors.length)]
     document.body.style.backgroundColor = selectedColor;
+    animate();
 }
-
 
 var canvas = document.getElementById("canvas");
 var c = canvas.getContext("2d");
@@ -95,10 +95,21 @@ function animate() {
     }
 }
 
-animate();
-
 setInterval(function() {
   bal.push(new Ball());
   bal.splice(0, 1);
 }, 400);
+
+function toggleMenu(x) {
+  x.classList.toggle("change"); 
+  var items = document.getElementById("myTopnav");
+  if (items.className === "topnav") {
+    items.className += " responsive";
+  } else {
+    items.className = "topnav";
+  }
+}
+
+
+
 
