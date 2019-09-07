@@ -12,34 +12,36 @@
             <a href="experience.html">Experience</a>
             <a href="projects.html">Projects</a>
             <a href="blog.html">Blog</a>
-            <a href="javascript:void(0);" class="icon" onclick="toggleMenu(this)">
+            <a ref="javascript:void(0);" class="icon" onclick="toggleMenu(this)">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
             </a>
         </div>
 
-        <canvas id="canvas"></canvas>
-            <div class="wrapper">
-                <div id="intro">
-                    <div id="profilePic">
-                        <img class="profile-pic" src="img/profilePicture.png" width="270" />
-                    </div>
-                    <div id="aboutMe">
-                        <h1 id="name">Hey, I'm Spencer</h1>
-                        <h3 id="subtitle">I'm a 4th year Engineering Physics Student at UBC, <br> minoring in Entrepreneurship</h3>
-                        <h4>I strieve to use my skills in engineering and technology to make a positive impact in the world</h4>
-                        <div id="socialLinks"> 
-                            <a href="https://www.linkedin.com/in/spencerjperkins/", target="_blank"><img src="img/linkedin.svg" width="50"/></a>
-                            <a href="https://github.com/spennyp", target="_blank"><img src="img/github.svg" width="50"/></a>
-                            <a href="mailto:hello@spencerperkins.me"><img src="img/mail.svg" width="50"/></a>
+        <div class="main">
+            <canvas id="canvas"></canvas>
+                <div class="wrapper">
+                    <div id="intro">
+                        <div id="profilePic">
+                            <img class="profile-pic" src="img/profilePicture.png" width="270" />
                         </div>
-                        <p>hello@spencerperkins.me</p>
+                        <div id="aboutMe">
+                            <h1 id="name">Hey, I'm Spencer</h1>
+                            <h3 id="subtitle">I'm a 4th year Engineering Physics Student at UBC, <br> minoring in Entrepreneurship</h3>
+                            <h4 id="goal">I strieve to use my skills in engineering and technology to make a positive impact in the world</h4>
+                            <div id="socialLinks"> 
+                                <a href="https://www.linkedin.com/in/spencerjperkins/", target="_blank"><img src="img/linkedin.svg" width="50"/></a>
+                                <a href="https://github.com/spennyp", target="_blank"><img src="img/github.svg" width="50"/></a>
+                                <a href="mailto:hello@spencerperkins.me"><img src="img/mail.svg" width="50"/></a>
+                            </div>
+                            <p>hello@spencerperkins.me</p>
+                        </div>
                     </div>
-                </div>
 
-               <button id="funButton" type="button" onclick="changeColor()">Click here if you want to spice up this page</button>
-            </div>
+                <button id="funButton" type="button" onclick="changeColor()">Click here if you want to spice up this page</button>
+                </div>
+        </div>
 
         <script src="scripts.js"></script>
    </body>
