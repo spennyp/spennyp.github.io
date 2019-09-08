@@ -107,9 +107,19 @@ function toggleMenu(x) {
     items.className += " responsive";
   } else {
     items.className = "topnav";
-  }
+}
 }
 
+$('#slide-down').click(function(){
+    $('img').slideDown('fast');
+});
 
+$('#slide-up').click(function(){
+    $('img').slideUp(400);
+});
+
+$('#toggle-sliding').click(function(){
+    $('img').slideToggle('slow');
+});
 
 
