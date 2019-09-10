@@ -65,7 +65,7 @@ body {
 }
 
 .entry {
-    padding: 30px 8px 0 8px;
+    padding: 30px 20px 0 20px !important;
     overflow: hidden;
     text-align: center;
 }
@@ -237,29 +237,35 @@ p + ul {
     .entry {
         display: block;
     }
+
     .entryMedia {
         text-align: center !important; 
         display: block;
         padding-right: 10px;
         width: 100% !important;  
     }
+
     .entryInfo {
         padding-top: 5px;
         text-align: center !important;
         display: block;
         width: 100% !important;  
     }
+
     .entryDetails {
         text-align: left;
         display: none;
-    }    
+    }  
+
     #profileDetails {
         display: block;
         text-align: center;
     }
+
     #profileInfo {
         width:100% !important;
     }
+
     .entryPhoto {
         width: 30%;
         max-width: 270px;
