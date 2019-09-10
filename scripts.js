@@ -107,19 +107,23 @@ function toggleMenu(x) {
     items.className += " responsive";
   } else {
     items.className = "topnav";
-}
+  } 
 }
 
-$('#slide-down').click(function(){
-    $('img').slideDown('fast');
+function toggleButton(x) {
+  x.classList.toggle("change"); 
+}
+
+$('#teslaDetailsButton').click(function(){
+  $('#teslaDetails').slideToggle(600);
 });
 
-$('#slide-up').click(function(){
-    $('img').slideUp(400);
+$('#bcHydroDetailsButton').click(function(){
+  $('#bcHydroDetails').slideToggle(600);
 });
 
-$('#toggle-sliding').click(function(){
-    $('img').slideToggle('slow');
+$('#logicAndFormDetailsButton').click(function(){
+  $('#logicAndFormDetails').slideToggle(600);
 });
 
 

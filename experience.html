@@ -19,22 +19,24 @@
             </a>
         </div>
 
+        <canvas id="canvas"></canvas>
         <div class="main">
             <div class="entry" id="tesla">
                 <div class="entryMedia">
                     <img class="entryPhoto" src="img/tesla.svg" width="270" />
                 </div>
-                <div class="entryInfo">
+                <div class="entryInfo" id="profileInfo">
                     <p class="entryTitle">Telsa</p>
                     <p class="entrySubtitle">Production Engineering Intern, Model 3 Battery Pack</p>
-                    <div class="entryDetails">
+                    <div class="entryDetails", id="teslaDetails">
                         <p>BC Hydro is the electrcial utility in British Columbia</p>
                         <ul> 
                             <li>Developed an in house substation load forecast with Tableau, SQL and batch scripts <br> saving BC Hydro tens of thousands of dollars</li>
                             <li>Developed a power factor calculation tool that is over 100 times faster than the previos methods</li>
                             <li>Performed duct bank thermal analysis to determine maximum allowable currents</li>
                         </ul>
-                    </div>
+                    </div> 
+                    <div class="arrow" id="teslaDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
                 </div>
             </div>
 
@@ -45,7 +47,7 @@
                 <div class="entryInfo">
                     <p class="entryTitle">BC Hydro</p>
                     <p class="entrySubtitle">Electrical Engineering Intern, Power Distribution Planning</p>
-                    <div class="entryDetails">
+                    <div class="entryDetails" id="bcHydroDetails">
                         <p>BC Hydro is the electrcial utility in British Columbia</p>
                         <ul> 
                             <li>Developed an in house substation load forecast with Tableau, SQL and batch scripts <br> saving BC Hydro tens of thousands of dollars</li>
@@ -54,6 +56,7 @@
                             <li>Performed duct bank thermal analysis to determine maximum allowable currents</li>
                         </ul>
                     </div>
+                    <div class="arrow" id="bcHydroDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
                 </div>
             </div>
 
@@ -64,7 +67,7 @@
                 <div class="entryInfo">
                     <p class="entryTitle">Logic&Form</p>
                     <p class="entrySubtitle">Creative Software Engineering Intern</p>
-                    <div class="entryDetails">
+                    <div class="entryDetails" id="logicAndFormDetails">
                         <p>Logic&Form invents, designs, and builds interactive experiences</p>
                         <ul> 
                             <li>Agile developer in Swift for macOS, creating an interactive wall spanning 3, 100" touch screens <br> to educate the public on the history of Indian Residential Schools in Canada</li>
@@ -73,9 +76,11 @@
                         </ul>
                     </div>
                 </div>
+                <div class="arrow" id="logicAndFormDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
             </div>
         </div>
 
-        <script src="scripts.js"></script>
    </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="scripts.js"></script>

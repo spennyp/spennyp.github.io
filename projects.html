@@ -20,7 +20,7 @@
         </div>
 
         <div class="main">
-            <div class="entry">
+            <!-- <div class="entry">
                 <div class="entryMedia">
                     <img class="entryPhoto" src="img/supermileage.png" width="270" />
                 </div>
@@ -58,9 +58,39 @@
                         </ul>
                     </div>
                 </div>
+            </div> -->
+
+
+            <canvas id="canvas"></canvas>
+            <div class="wrapper">
+                <div class="entry">
+                    <div class="entryMedia" id="profilePic">
+                        <img class="entryPhoto" src="img/profilePicture.png" width="270" />
+                    </div>
+                    <div class="entryInfo" id="profileInfo">
+                        <p class="entryTitle">Hey, I'm Spencer!</p>
+                        <p class="entrySubtitle">I'm a 4th year Engineering Physics Student at UBC, <br> minoring in Entrepreneurship</p>
+                        <div class="entryDetails" id="profileDetails">
+                            I strive to use my skills in engineering and technology to make a positive impact in the world
+                            <div id="socialLinks"> 
+                                <a href="https://www.linkedin.com/in/spencerjperkins/", target="_blank"><img src="img/linkedin.svg" width="50" id="linkedin"/></a>
+                                <a href="https://github.com/spennyp", target="_blank"><img src="img/github.svg" width="50" id="github"/></a>
+                                <a href="mailto:hello@spencerperkins.me"><img src="img/mail.svg" width="50" id="mail"/></a>
+                            </div>
+                            <p>hello@spencerperkins.me</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <button id='slide-up'>Slide Up</button>    -->
+                <div id='slide-up'>Slide Up</div>   
+
+
+                <button id="funButton" type="button" onclick="changeColor()">Click here if you want to spice up this page</button>
+                     
+
             </div>
         </div>
-
-        <script src="scripts.js"></script>
    </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="scripts.js"></script>
