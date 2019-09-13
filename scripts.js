@@ -133,3 +133,26 @@ $('#supermileageDetailsButton').click(function(){
 $('#robotDetailsButton').click(function(){
   $('#robotDetails').slideToggle(600);
 });
+
+if ($(window).width() > 960) {
+  VANTA.NET({
+    el: "#vantajs",
+    color: 0xA82330,
+    backgroundColor: 0xffffff,
+    maxDistance: 22.00,
+    spacing: 18.00,
+    showDots: false
+  })
+} else {
+  VANTA.NET({
+    el: "#vantajs",
+    color: 0xA82330,
+    backgroundColor: 0xffffff,
+    maxDistance: 20.00,
+    spacing: 30.00,
+    showDots: false
+  })
+}
+
+
+
