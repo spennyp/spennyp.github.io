@@ -19,11 +19,33 @@
             </a>
         </div> 
 
-        <div class="main">
+        <canvas id="canvas"></canvas>
+        <div class="main"> 
+
+            <div class="entry" id="steeringWheel">
+                <div class="entryMedia">
+                    <img class="entryPhoto" src="img/supermileage.png" width="270" />
+                </div>
+                <div class="entryInfo">
+                    <p class="entryTitle">CAN bus</p>
+                    <p class="entrySubtitle">Adding CAN bus to UBC Supermileage's new Electric UrbanConcept vehicle</p>
+                    <div class="entryDetails" id="supermileageDetails">
+                        <p>BC Hydro is the electrcial utility in British Columbia</p>
+                        <ul> 
+                            <li>Developed an in house substation load forecast with Tableau, SQL and batch scripts <br> saving BC Hydro tens of thousands of dollars</li>
+                            <li>Wrote a paper on the best way to calculate the natural power factor in an electrical system</li>
+                            <li>Developed a power factor calculation tool that is over 100 times faster than the previos methods</li>
+                            <li>Performed duct bank thermal analysis to determine maximum allowable currents</li>
+                        </ul>
+                    </div>
+                    <div class="arrow" id="supermileageDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
+                </div>
+            </div>
 
             
         </div>
 
-        <script src="scripts.js"></script>
    </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="scripts.js"></script>

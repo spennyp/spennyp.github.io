@@ -126,4 +126,10 @@ $('#logicAndFormDetailsButton').click(function(){
   $('#logicAndFormDetails').slideToggle(600);
 });
 
+$('#supermileageDetailsButton').click(function(){
+  $('#supermileageDetails').slideToggle(600);
+});
 
+$('#robotDetailsButton').click(function(){
+  $('#robotDetails').slideToggle(600);
+});
