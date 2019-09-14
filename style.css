@@ -1,10 +1,15 @@
 /* Default Layouts*/
+html {
+    height: 100%;
+}
+
 body {
     background-color: white;
     font-family: 'Roboto', sans-serif;
     margin: 0px;
     overflow: scroll;
     color: rgb(77, 77, 77);
+    height: 100%;
 }
 
 #indexBody {
@@ -60,12 +65,12 @@ body {
     color: black;
 }
 
-#telsa {
-    background-color: white;
-}
+#tesla, #bcHydro {
+    background-color: rgb(236, 235, 235) !important;
+}   
 
-#bcHydro {
-    background-color: rgb(236, 235, 235);
+#supermileage, #logicAndForm {
+    background-color: white;
 }
 
 .entry {
@@ -82,11 +87,8 @@ body {
     width:55% !important;
 }
 
-.entryMedia {
-    float: left;
-    text-align: right; 
-    padding-right: 10px;
-    width: 30%;
+#profilePic.div {
+    width: 10% !important;
 }
 
 .entryInfo {
@@ -96,23 +98,21 @@ body {
     width:65% !important;
 }
 
-
-#profilePic.div {
-    width: 10% !important;
-}
-
 .entryTitle {
     font-size: 25px;
     font-weight: bold;
-    margin-top: 10px;
+    padding-top: 10px;
+    display: inline;
 }
 
 .entrySubtitle {
     font-size: 20px;
+    margin-top: -1px;
 }
 
-.entrySubtitle {
-    margin-top: -20px;
+.date {
+    font-size: 14px;
+    display: inline;
 }
 
 .entryDetails {
@@ -120,8 +120,17 @@ body {
     text-align: left;
 }
 
+.entryMedia {
+    float: left;
+    text-align: right; 
+    padding-right: 10px;
+    width: 30%;
+}
+
 .entryPhoto {
     max-width: 80%;
+    height: 100% !important;
+    vertical-align: middle !important
 }
 
 p + ul {
@@ -130,6 +139,29 @@ p + ul {
 
 .arrow {
     display: none;
+}
+
+/* unvisited link */
+a.projLink {
+    color: rgb(168, 35, 48);
+    text-decoration: none;
+}
+
+/* visited link */
+.a:visited.projLink {
+    color:rgb(168, 35, 48);
+    text-decoration: none;
+
+}
+
+/* mouse over link */
+a:hover.projLink {
+    color: gray;
+    text-decoration: none;
+}
+
+#socialLinks {
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 475px) {
@@ -219,6 +251,11 @@ p + ul {
 
     .entrySubtitle {
         font-size: 16px;
+    }
+
+    .date {
+        font-size: 12px;
+        display: inline;
     }
 
     .entryDetails {
