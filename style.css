@@ -65,14 +65,6 @@ body {
     color: black;
 }
 
-/* #tesla, #bcHydro {
-    background-color: rgb(236, 235, 235) !important;
-}   
-
-#supermileage, #logicAndForm {
-    background-color: white;
-} */
-
 .entry {
     padding: 30px 20px 30px 20px !important;
     overflow: hidden;
@@ -94,6 +86,10 @@ body {
 
 #profilePic.div {
     width: 10% !important;
+}
+
+.comingSoon {
+    margin-top: 50px;
 }
 
 .entryInfo {
