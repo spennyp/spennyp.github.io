@@ -65,18 +65,23 @@ body {
     color: black;
 }
 
-#tesla, #bcHydro {
+/* #tesla, #bcHydro {
     background-color: rgb(236, 235, 235) !important;
 }   
 
 #supermileage, #logicAndForm {
     background-color: white;
-}
+} */
 
 .entry {
-    padding: 30px 20px 0 20px !important;
+    padding: 30px 20px 30px 20px !important;
     overflow: hidden;
     text-align: center;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+#profileEntry {
+    border-bottom: none;
 }
 
 #profilePic {
@@ -118,6 +123,7 @@ body {
 .entryDetails {
     font-size: 16px;
     text-align: left;
+    display: block;
 }
 
 .entryMedia {
@@ -329,5 +335,14 @@ a:hover.projLink {
         transform: rotate(-135deg);
         -webkit-transform: rotate(-135deg) skew(-15deg,-15deg);
         margin-bottom: -15px; 
+    }
+}
+
+/* This fixes the jquery toggle issue */
+@media screen and (min-width: 1150px) {
+    .entryDetails {
+        font-size: 16px;
+        text-align: left;
+        display: block !important;
     }
 }

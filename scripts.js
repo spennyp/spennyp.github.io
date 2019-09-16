@@ -115,7 +115,7 @@ function toggleButton(x) {
 }
 
 $('#teslaDetailsButton').click(function(){
-  $('#teslaDetails').slideToggle(600);
+    $('#teslaDetails').slideToggle(600);
 });
 
 $('#bcHydroDetailsButton').click(function(){
@@ -130,8 +130,14 @@ $('#supermileageDetailsButton').click(function(){
   $('#supermileageDetails').slideToggle(600);
 });
 
-$('#robotDetailsButton').click(function(){
-  $('#robotDetails').slideToggle(600);
+$('#robotCompDetailsButton').click(function(){
+  $('#robotCompDetails').slideToggle(600);
+});
+
+$(window).resize(function() {
+  if(window.width > 1000) {
+    $('#teslaDetails').slideDown(600)
+  } 
 });
 
 
