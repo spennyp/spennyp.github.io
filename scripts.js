@@ -134,10 +134,22 @@ $('#robotCompDetailsButton').click(function(){
   $('#robotCompDetails').slideToggle(600);
 });
 
+$('#cuttingEdgeDetailsButton').click(function(){
+  $('#cuttingEdgeDetails').slideToggle(600);
+});
+
 $(window).resize(function() {
   if(window.width > 1000) {
     $('#teslaDetails').slideDown(600)
   } 
+});
+
+var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3Blbm55cDMiLCJhIjoiY2pnb2I2azZ4MjI3ZjJ4cW4ycGR0djN6NiJ9.ZMKwiY9LeX2fWuWQ9fEWUw';
+var map = new mapboxgl.Map({
+  container: 'testId',
+  style: 'mapbox://styles/mapbox/streets-v11'
 });
 
 
