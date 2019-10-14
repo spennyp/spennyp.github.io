@@ -21,6 +21,18 @@ var geojson = {
             title: 'Big Sur Hike',
             description: 'California'
         }
+    }],
+    type: 'FeatureCollection',
+    features: [{
+        type: 'Feature',
+        geometry: {
+            type: 'Point',
+            coordinates: [-121.8081, 36.2704]
+        },
+        properties: {
+            title: 'Big Sur Hike',
+            description: 'California'
+        }
     }]
 };
 

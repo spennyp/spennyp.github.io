@@ -134,6 +134,10 @@ $('#robotCompDetailsButton').click(function(){
   $('#robotCompDetails').slideToggle(600);
 });
 
+$('#cuttingEdgeDetailsButton').click(function(){
+  $('#cuttingEdgeDetails').slideToggle(600);
+});
+
 $(window).resize(function() {
   if(window.width > 1000) {
     $('#teslaDetails').slideDown(600)
