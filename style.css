@@ -1,53 +1,29 @@
-/* Default Layouts*/
-
 html {
     height: 100%;
+    width: 100%;
+    overflow-x: hidden
 }
 
 body {
     background-color: white;
     font-family: 'Roboto', sans-serif;
-    margin: 0px;
-    overflow: scroll;
     color: rgb(77, 77, 77);
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
 }
 
 #indexBody {
-    overflow: hidden;
-}
-
-.main {
-    margin-top: 30px;
-    /* Add a top margin to avoid content overlay */
-    padding-top: 10px;
-    text-align: center;
-    display: inline-block;
-    position: absolute;
-    width: 100%;
-}
-
-#canvas {
-    position: absolute;
-    top: 10;
-    left: 0;
-    margin-top: 30px;
-    /* Add a top margin to not cover nav*/
-    width: 100%;
-    height: 100%;
+    overflow-y: hidden;
 }
 
 .topnav {
     background-color: rgb(255, 255, 255);
     color: gray;
     overflow: hidden;
-    position: fixed;
-    /* Set the navbar to fixed position */
-    top: 0;
-    /* Position the navbar at the top of the page */
+    display: block;
     width: 100%;
-    /* Full width */
-    z-index: 999;
 }
 
 .topnav a {
@@ -72,82 +48,169 @@ body {
     color: black;
 }
 
-.entry {
-    padding: 30px 20px 30px 20px !important;
-    overflow: hidden;
+.main {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* Make the 100% reference outside box */
+}
+
+.card, .entry {
+    padding: 20px 20px 20px 20px;
     text-align: center;
     border-bottom: 1px solid rgb(223, 223, 223);
+    width: 100%;
+    color: rgb(77, 77, 77);
+    text-decoration: None;
+    display: block;
+    box-sizing: border-box; /* Make the 100% reference outside box */
+}
+
+.card {
+    display: inline-block;
+}
+
+.entry {
+    height: auto;
+    display: inline-block;
+}
+
+.cardMedia, .entryMedia {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 30%;
+    float: left;
+    box-sizing: border-box; /* Make the 100% reference outside box */
+    padding-right: 10px;
+    padding-left: 10%;
+    max-width: 300px;
+    max-height: 300px;  
+}
+
+.cardInfo, .entryInfo {
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    height: 100%;
+    width: 70%;
+    text-align: left;
+    overflow: hidden;
+}
+
+.cardTitle {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cardDescription {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.cardTags {
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+a:hover {
+    background-color: rgb(201, 201, 201);
+}
+
+#canvas {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.entryHeader {
+    display: block;
+    height: 15%;
+    width: 100%;
+}
+
+.entryTitle {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    height: 100%;
+}
+
+.date {
+    display: flex;
+    float: left;
+    text-align: left;
+    font-size: 12px;
+    line-height: 25px;
+    align-items: bottom;
+    height: 100%;
+}
+
+.entrySubtitle {
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    margin-top: -1px;
+    text-align: left;
+    height: 15%;
+}
+
+.entryDetails {
+    font-size: 16px;
+    height: 60%;
+    width: 100%;
+    text-align: left;
+    display: block;
 }
 
 #profileEntry {
     border-bottom: none;
+    height: auto;
+    margin-top: 30px;
 }
 
-#profilePic {
+#profileEntrySubtitle {
+    margin: 10px 0;
+}
+
+#profileEntryInfo {
+    padding-top: 30px;
+    width: 60%;
+}
+
+#profileMediaBox {
+    display: inline-block;
     width: 40%;
+    height: 100%;
 }
 
-#profileInfo {
-    width: 55% !important;
+#profileEntryDetailPoints {
+    padding: 0;
 }
 
-#profilePic.div {
-    width: 10% !important;
+#profilePicture {
+    /* width: 40%; */
+    box-sizing: border-box; /* Make the 100% reference outside box */
+    margin-left: auto;
+    margin-right: 3%;
+    padding: 0;
+    width: 300px;
+    height: 300px;
+    float: right
+    
 }
 
 .comingSoon {
     margin-top: 50px;
 }
 
-.entryInfo {
-    padding-top: 25px;
-    text-align: left;
-    display: inline-block;
-    width: 65% !important;
-}
-
-.entryTitle {
-    font-size: 25px;
-    font-weight: bold;
-    padding-top: 10px;
-    display: inline;
-}
-
-.entrySubtitle {
-    font-size: 20px;
-    margin-top: -1px;
-}
-
-.date {
-    font-size: 14px;
-    display: inline;
-}
-
-.entryDetails {
-    font-size: 16px;
-    text-align: left;
-    display: block;
-}
-
-.entryMedia {
-    float: left;
-    text-align: right;
-    padding-right: 10px;
-    width: 30%;
-}
-
-.entryPhoto {
-    max-width: 80%;
-    height: 100% !important;
-    vertical-align: middle !important
-}
-
 p+ul {
     margin-top: -10px;
-}
-
-.arrow {
-    display: none;
 }
 
 /* unvisited link */
@@ -164,8 +227,6 @@ a.projLink {
     text-decoration: none;
 }
 
-/* mouse over link */
-
 a:hover.projLink {
     color: gray;
     text-decoration: none;
@@ -175,10 +236,207 @@ a:hover.projLink {
     margin-top: 20px;
 }
 
+/* Toggle Arrow */
+.arrow-down {
+    text-align: center;
+    width: 90px;
+    height: 50px;
+    position: relative;
+    display: none;
+    margin: auto;
+}
+
+.arrow-down:before, .arrow-down:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: gray;
+    position: absolute;
+    top: 30px;
+    transition: transform .3s;
+}
+
+.arrow-down:before {
+    right: 41px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transform: rotate(30deg);
+}
+
+.arrow-down:after {
+    right: -1px;
+    transform: rotate(-30deg);
+}
+
+.arrow-down.active:before {
+    transform: rotate(-30deg);
+}
+
+.arrow-down.active:after {
+    transform: rotate(30deg);
+}
+
+@media screen and (min-width: 1150px) {
+    /* This overrides the jqery display: none property */
+    .entryDetails {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #profileMediaBox {
+        width: 100%;
+    } 
+
+    #profilePicture {
+        box-sizing: border-box; /* Make the 100% reference outside box */
+        margin: 0 auto;
+        float: none;
+    }
+
+    #profileEntryInfo {
+        width: 100%;
+    }
+
+    #profileEntry {
+        height: auto;
+    }
+
+    #profileEntryDetailPoints {
+        width: 100%;
+        text-align: center;
+        padding: 0
+    }
+
+    .arrow-down {
+        display: block;
+    }
+    
+    .entry {
+        display: block;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .entryMedia {
+        display: block;
+        padding: 0px;
+        width: 100%;
+        height: 50%;
+        max-height: 150px;
+        text-align: center;
+        max-width: 200px;
+        float: none;
+        margin: 0 auto;
+    }
+
+    #profilePicture {
+        width: 200px;
+        height: 200px;
+        max-height: none;
+    }
+
+    .entryInfo {
+        height: 50%;
+        width: 100%;
+    }
+
+    .entryHeader {
+        height: 35%;
+        width: 100%;
+    }
+
+    .entryTitle {
+        display: block;
+        width: 100%;
+        height: 60%;
+        text-align: center;
+    }
+
+    .date {
+        display: block;
+        width: 100%;
+        height: 40%;
+        text-align: center;
+    }
+
+    .entrySubtitle {
+        width: 100%;
+        text-align: center;
+        padding-top: 5px;
+        height: 30%;
+    }
+
+    .entryDetailHeader {
+        text-align: center;
+    }
+
+    .entryDetails {
+        display: none;
+        width: 100%;
+    }
+
+    #aboutMeDetails {
+        padding-top: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .entryDetailPoints {
+        width: 60%;
+        padding: 0 20%;
+    }
+
+    .cardTitle {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .cardDescription {
+        font-size: 15px;
+    }
+
+    .cardMedia {
+        min-width: 120px;
+        padding-left: 8%;
+    }
+
+    #profileDetails {
+        display: block;
+        text-align: center;
+    }
+
+    #profileInfo {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .cardDescription {
+        font-size: 13px;
+    }
+
+    .cardTags {
+        display: None;
+    }
+
+    .cardMedia {
+        min-width: 120px;
+        padding-left: 8%;
+    }
+
+    .entryDetailPoints {
+        width: 80%;
+        padding: 0 10%;
+    }
+}
+
 @media screen and (max-width: 475px) {
     .topnav a:not(:first-child) {
         display: none;
     }
+
     /* Menu Icon */
     .bar1, .bar2, .bar3 {
         width: 25px;
@@ -187,147 +445,148 @@ a:hover.projLink {
         margin: 4px 0;
         transition: 0.4s;
     }
+
     .change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-5px, 6px);
         transform: rotate(-45deg) translate(-5px, 6px);
     }
+
     .change .bar2 {
         opacity: 0;
     }
+
     .change .bar3 {
         -webkit-transform: rotate(45deg) translate(-2px, -3px);
         transform: rotate(45deg) translate(-2px, -3px);
     }
+
     .topnav a.icon {
         float: right;
         display: block;
         margin-top: -4px;
     }
+
     .topnav .icon:hover {
         border-bottom: 0px solid rgb(201, 201, 201);
         background-color: none;
     }
+
     .topnav.responsive {
         position: relative;
     }
+
     .topnav.responsive a.icon {
         position: absolute;
         right: 0;
         top: 0;
     }
+
     .topnav.responsive a {
         float: none;
         display: block;
         text-align: left;
     }
+
     .topnav.responsive a.active {
         background-color: rgb(168, 35, 48)
     }
+
     .topnav a.active {
         border-bottom: 0px solid rgb(168, 35, 48);
     }
+
     .topnav a {
         font-size: 15px;
     }
+
     .topnav a:hover {
         background-color: rgb(201, 201, 201);
         color: black;
     }
-    /* Page Resize */
+
     #github, #mail, #linkedin {
         width: 30px;
     }
+
     #myTopnav {
         border-bottom: 2px solid gray;
     }
+
+    .entryMedia {
+        max-height: 100px;
+    }
+
     .entryTitle {
         font-size: 18px;
         font-weight: bold;
         margin-top: 10px;
     }
+
     .entrySubtitle {
         font-size: 16px;
     }
+
     .date {
         font-size: 12px;
         display: inline;
     }
+
     .entryDetails {
         margin-top: 10px;
         font-size: 14px;
         text-align: left;
     }
-    .arrow {
-        padding: 20px 20px 5px 5px !important;
-        margin-bottom: 5px;
+
+    .cardDescription {
+        display: None;
     }
-    .change.arrow {
-        margin-bottom: -10px !important;
+
+    .card {
+        height: 10%;  
+    }
+
+    .cardTitle {
+        font-size: 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .cardMedia {
+        min-width: 120px;
+        padding-left: 2%;
+    }
+
+    .cardInfo {
+        width: 50%;
+        float: left;
     }
 }
 
-@media screen and (max-width: 1150px) {
-    .entry {
-        display: block;
+@media screen and (max-width: 285px) {
+    .main .card {
+        height: 16%;
     }
-    .entryMedia {
-        text-align: center !important;
+
+    .cardMedia {
         display: block;
-        padding-right: 10px;
-        width: 100% !important;
+        height: 50%;
+        width: 100%;
+        padding: 0px 10px;
     }
-    .entryInfo {
-        padding-top: 5px;
-        text-align: center !important;
-        display: block;
-        width: 100% !important;
-    }
-    .entryDetails {
-        text-align: left;
-        display: none;
-    }
-    #profileDetails {
-        display: block;
+
+
+    .cardInfo {
+        height: 50%;
+        width: 100%;
         text-align: center;
     }
-    #profileInfo {
-        width: 100% !important;
-    }
-    .entryPhoto {
-        width: 30%;
-        max-width: 270px;
-        min-width: 100px;
-    }
-    .arrow {
-        border: solid gray;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 40px 40px 5px 5px;
-        text-align: center !important;
-        display: inline-block;
-        margin-bottom: 7px;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg) skew(-15deg, -15deg);
-    }
-    .change.arrow {
-        transform: rotate(-135deg);
-        -webkit-transform: rotate(-135deg) skew(-15deg, -15deg);
-        margin-bottom: -15px;
-    }
 }
 
-/* This fixes the jquery toggle issue */
-
-@media screen and (min-width: 1150px) {
-    .entryDetails {
-        font-size: 16px;
-        text-align: left;
-        display: block !important;
-    }
-}
+/* MAP STYLES */
 
 #map {
-    margin-top: 50px !important;
+    margin-top: 50px;
     height: 100%;
     width: 100%;
 }
@@ -349,3 +608,58 @@ a:hover.projLink {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
+
+.legend {
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+}
+    
+.legend h4 {
+    margin: 0 0 10px;
+}
+    
+.legend div span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+}
+
+
+/* .modal {
+    width: 500px !important;
+} */
+
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-body {
+    height: 500px;
+}
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
+#vantajs {
+    height: 100%;
+}
+
+

@@ -12,40 +12,40 @@
             <a href="index.html" class="active">Spencer Perkins</a>
             <a href="experience.html">Experience</a>
             <a href="projects.html">Projects</a>
-            <!-- <a href="explore.html">Explore</a> -->
+            <a href="explore.html">Explore</a>
             <a href="javascript:void(0);" class="icon" onclick="toggleMenu(this)">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
             </a>
         </div>
-
-        <div id="vantajs">
-            <canvas id="canvas"></canvas>
             <div class="main">
-                <div class="wrapper">
-                    <div class="entry" id="profileEntry">
-                        <div class="entryMedia" id="profilePic">
-                            <img class="entryPhoto" src="img/profilePicture.png" width="270" />
+                <div id="vantajs">
+                <div class="entry" id="profileEntry">
+                    <div id="profileMediaBox">
+                        <img class="entryMedia" id="profilePicture" src="img/profilePicture.png"/>
+                    </div>
+                    <div class="entryInfo" id="profileEntryInfo">
+                        <div class="entryHeader">
+                            <div class="entryTitle">Hey, I'm Spencer!</div>
                         </div>
-                        <div class="entryInfo" id="profileInfo">
-                            <p class="entryTitle">Hey, I'm Spencer!</p>
-                            <p class="entrySubtitle">I'm a 4th year Engineering Physics Student at UBC, <br> minoring in Entrepreneurship</p>
-                            <div class="entryDetails" id="profileDetails">
-                                I strive to use my skills in engineering and technology to make a positive impact in the world
+                        <div class="entrySubtitle" id="profileEntrySubtitle">I'm a 4th year Engineering Physics Student at UBC, <br> minoring in Entrepreneurship</div>
+                        <div class="entryDetails" id="aboutMeDetails">
+                            <div class="entryDetailHeader">I strive to use my skills in engineering and technology to make a positive impact in the world</div>
+                            <ul class="entryDetailPoints" id="profileEntryDetailPoints"> 
                                 <div id="socialLinks"> 
                                     <a href="https://www.linkedin.com/in/spencerjperkins/", target="_blank"><img src="img/linkedin.svg" width="50" id="linkedin"/></a>
                                     <a href="https://github.com/spennyp", target="_blank"><img src="img/github.svg" width="50" id="github"/></a>
                                     <a href="mailto:hello@spencerperkins.me"><img src="img/mail.svg" width="50" id="mail"/></a>
                                 </div>
                                 <p>hello@spencerperkins.me</p>
-                            </div>
+                            </ul>
                         </div>
-                        <!-- <button id="funButton" type="button" onclick="changeColor()">Click here if you want to spice up this page</button> -->
                     </div>
                 </div>
             </div>
-        </div>
+
+            
    </body>
 </html>
 <script src="three.js"></script>

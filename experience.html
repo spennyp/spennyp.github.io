@@ -4,6 +4,8 @@
         <title>Spencer Perkins</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
+        <script src="scripts.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="img/s.png">
     </head>
@@ -12,7 +14,7 @@
             <a href="index.html">Spencer Perkins</a>
             <a href="experience.html" class="active">Experience</a>
             <a href="projects.html">Projects</a>
-            <!-- <a href="explore.html">Explore</a> -->
+            <a href="explore.html">Explore</a>
             <a href="javascript:void(0);" class="icon" onclick="toggleMenu(this)">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -20,123 +22,123 @@
             </a>
         </div>
 
-        <canvas id="canvas"></canvas>
         <div class="main"> 
+
             <div class="entry" id="tesla">
-                <div class="entryMedia">
-                    <img class="entryPhoto" src="img/tesla.svg" width="270" />
-                </div>
+                <img class="entryMedia" src="img/tesla.svg"/>
                 <div class="entryInfo">
-                    <p class="entryTitle">Tesla</p>
-                    <p class="date">(Sept 2019 - Present)</p>
-                    <p class="entrySubtitle">Production Engineering Intern, Model 3 Battery Pack</p>
+                    <div class="entryHeader">
+                        <div class="entryTitle">Tesla</div>
+                        <div class="date">(Sept 2019 - Present)</div>
+                    </div>
+                    <div class="entrySubtitle">Production Engineering Intern, Model 3 Battery Pack</div>
                     <div class="entryDetails" id="teslaDetails">
-                        <p>Tesla is the leading electric car manufacturer in the world</p>
-                        <ul> 
+                        <div class="entryDetailHeader">Tesla is the leading electric car manufacturer in the world</div>
+                        <ul class="entryDetailPoints"> 
                             <li>Rewrote Python scripts that run the production line and moved them over <br> to the Kubernetes serverless framework Kubeless</li>
                             <li>Task automation for quick data deep dive in yield and availability</li>
                             <li>Implement data acquisition devices for interpreting current line issues to a more granular level</li>
                             <li>Implement machine learning in vision systems to scale faster for inspecting foreign objects</li>
                         </ul>
                     </div>
-                    <div class="arrow" id="teslaDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
+                    <div class="arrow-down" id="teslaDetailsButton" onclick="this.classList.toggle('active');"></div>
                 </div>
             </div>
 
             <div class="entry" id="supermileage">
-                    <div class="entryMedia">
-                        <img class="entryPhoto" src="img/supermileage.png" width="270"/>
+                <img class="entryMedia" src="img/supermileage.png"/>
+                <div class="entryInfo">
+                    <div class="entryHeader">
+                        <div class="entryTitle">UBC Supermileage Student Team</div>
+                        <div class="date">(Sept 2016 - Present)</div>
                     </div>
-                    <div class="entryInfo">
-                        <p class="entryTitle">UBC Supermileage Student Team</p>
-                        <p class="date">(Sept 2016 - Present)</p>
-                        <p class="entrySubtitle">Electrical Lead, previously power train team member</p>
-                        <div class="entryDetails" id="supermileageDetails">
-                            <p>UBC Supermileages is in pursuit of designing the most efficent vehicles possible</p>
-                            <ul> 
-                                <li>Redeisgned the <a class="projLink" href="projects/steeringWheel.html">steeting wheel</a> in our Electric Urban Concept vehicle, including mechanical, electrcial and software</li>
-                                <li>Implemented a <a class="projLink" href="projects/can.html">CAN bus</a> microcontroller communication system in C++ in the Electric Urban Concept vehicle</li>
-                                <li>Attended Shell Ecomarathon Americas 2019 where our Prototype Vehicle finished in 2nd achieving 1371 MPG</li>
-                                <li>Redesigned our Prototype vehicle's drivetrain to move from chain to belt drive</li>
-                                <li>Redesigned the fuel system on our Prototype Vehicle</li>
-                            </ul>
-                        </div>
-                        <div class="arrow" id="supermileageDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
+                    <div class="entrySubtitle">Electrical Lead, previously power train team member</div>
+                    <div class="entryDetails" id="supermileageDetails">
+                        <div class="entryDetailHeader">UBC Supermileages is in pursuit of designing the most efficent vehicles possible</div>
+                        <ul class="entryDetailPoints"> 
+                            <li>Redeisgned the <a class="projLink" href="projects/steeringWheel.html">steeting wheel</a> in our Electric Urban Concept vehicle, including mechanical, electrcial and software</li>
+                            <li>Implemented a <a class="projLink" href="projects/can.html">CAN bus</a> microcontroller communication system in C++ in the Electric Urban Concept vehicle</li>
+                            <li>Attended Shell Ecomarathon Americas 2019 where our Prototype Vehicle finished in 2nd achieving 1371 MPG</li>
+                            <li>Redesigned our Prototype vehicle's drivetrain to move from chain to belt drive</li>
+                            <li>Redesigned the fuel system on our Prototype Vehicle</li>
+                        </ul>
                     </div>
+                    <div class="arrow-down" id="supermileageDetailsButton" onclick="this.classList.toggle('active');"></div>
                 </div>
+            </div>
 
             <div class="entry" id="bcHydro">
-                <div class="entryMedia">
-                    <img class="entryPhoto" src="img/bcHydro.svg" width="270" />
-                </div>
+                <img class="entryMedia" src="img/bcHydro.svg"/>
                 <div class="entryInfo">
-                    <p class="entryTitle">BC Hydro</p>
-                    <p class="date">(May - Sept, 2019)</p>
-                    <p class="entrySubtitle">Electrical Engineering Intern, Power Distribution Planning</p>
-                    <div class="entryDetails" id="bcHydroDetails">
-                        <p>BC Hydro is the electrcial utility in British Columbia</p>
-                        <ul> 
+                    <div class="entryHeader">
+                        <div class="entryTitle">BC Hydro</div>
+                        <div class="date">(May - Sept, 2019)</div>
+                    </div>
+                    <div class="entrySubtitle">Electrical Engineering Intern, Power Distribution Planning</div>
+                    <div class="entryDetails" id="hydroDetails">
+                        <div class="entryDetailHeader">BC Hydro is the electrcial utility in British Columbia</div>
+                        <ul class="entryDetailPoints"> 
                             <li>Developed an in house substation load forecast with Tableau, SQL and batch scripts <br> saving BC Hydro tens of thousands of dollars</li>
                             <li>Developed a power factor calculation tool that is over 100 times faster than the previos methods</li>
                             <li>Performed duct bank thermal analysis to determine maximum allowable currents</li>
                         </ul>
                     </div>
-                    <div class="arrow" id="bcHydroDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
+                    <div class="arrow-down" id="hydroDetailsButton" onclick="this.classList.toggle('active');"></div>
                 </div>
             </div>
 
             <div class="entry" id="robotComp">
-                <div class="entryMedia">
-                    <img class="entryPhoto" src="img/robot.jpeg" width="270" />
-                </div>
+                <img class="entryMedia" src="img/robot.jpeg"/>
                 <div class="entryInfo">
-                    <p class="entryTitle">UBC Engineering Physics Robot Competition</p>
-                    <p class="date">(Summer 2018)</p>
-                    <p class="entrySubtitle">Electrical and Software Specialist</p>
+                    <div class="entryHeader">
+                        <div class="entryTitle">UBC Engineering Physics Robot Competition</div>
+                        <div class="date">(Summer 2018)</div>
+                    </div>
+                    <div class="entrySubtitle">Electrical and Software Specialist</div>
                     <div class="entryDetails" id="robotCompDetails">
-                        <p>Designed and build a fully autonomous, dual stage robot in a team of 4</p>
-                        <ul> 
+                        <div class="entryDetailHeader">Designed and build a fully autonomous, dual stage robot in a team of 4</div>
+                        <ul class="entryDetailPoints"> 
                             <li>Robot sucessfully navigated a course around obsticles, over gaps and bridges while avoiding trip wires and picking up objects along the way</li>
                             <li>Designed and built the circuits that ran the robot</li>
                             <li>Developed the code in C++, which include PID edge following, object and cliff detection, inter robot communication, dual direction PWM motor controls, a full menu system and test suite</li>
                             <li><a class="projLink" href="https://breaching-tower.github.io/" target="_blank">Click for more details</a></li>
                         </ul>
                     </div>
-                    <div class="arrow" id="robotCompDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
+                    <div class="arrow-down" id="robotCompDetailsButton" onclick="this.classList.toggle('active');"></div>
                 </div>
             </div>
 
             <div class="entry" id="logicAndForm">
-                <div class="entryMedia">
-                    <img class="entryPhoto" src="img/logic&Form.png" width="270" />
-                </div>
+                <img class="entryMedia" src="img/logic&Form.png"/>
                 <div class="entryInfo">
-                    <p class="entryTitle">Logic&Form </p>
-                    <p class="date">(Jan - Sept, 2018)</p>
-                    <p class="entrySubtitle">Creative Software Engineering Intern</p>
+                    <div class="entryHeader">
+                        <div class="entryTitle">Logic&Form</div>
+                        <div class="date">(Jan - Sept, 2018)</div>
+                    </div>
+                    <div class="entrySubtitle">Creative Software Engineering Intern</div>
                     <div class="entryDetails" id="logicAndFormDetails">
-                        <p>Logic&Form invents, designs, and builds interactive experiences</p>
-                        <ul> 
+                        <div class="entryDetailHeader">Logic&Form invents, designs, and builds interactive experiences</div>
+                        <ul class="entryDetailPoints"> 
                             <li>Agile developer in Swift for macOS, creating an <a class="projLink" href="projects/interactiveWall.html">interactive wall</a> spanning 3, 100" touch screens <br> to educate the public on the history of Indian Residential Schools in Canada</li>
                             <li>Worked with Raspberry Pi's in Python to send touch data from the touch screens, to the iMac <br> running the main installation, where touches were turned into custom gestures for macOS</li>
                             <li>Created caching server in Javascript with node.js and postgreSQL to quickly serve media</li>
                         </ul>
                     </div>
+                    <div class="arrow-down" id="logicAndFormDetailsButton" onclick="this.classList.toggle('active');"></div>
                 </div>
-                <div class="arrow" id="logicAndFormDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
             </div>
 
             <div class="entry" id="cuttingEdge">
-                <div class="entryMedia">
-                    <img class="entryPhoto" src="img/cuttingEdge.png" width="270" />
-                </div>
+                <img class="entryMedia" src="img/cuttingEdge.png"/>
                 <div class="entryInfo">
-                    <p class="entryTitle">Cutting Edge Lawn and Landscape</p>
-                    <p class="date">(2013-2016)</p>
-                    <p class="entrySubtitle">Founder, Owner</p>
+                    <div class="entryHeader">
+                        <div class="entryTitle">Cutting Edge Lawn and Landscape</div>
+                        <div class="date">(2013-2016)</div>
+                    </div>
+                    <div class="entrySubtitle">Founder, Owner</div>
                     <div class="entryDetails" id="cuttingEdgeDetails">
-                        <p>Cutting Edge Lawn and Landscape provides full lawn care and landscaping service</p>
-                        <ul> 
+                        <div class="entryDetailHeader">Cutting Edge Lawn and Landscape provides full lawn care and landscaping service</div>
+                        <ul class="entryDetailPoints"> 
                             <li>Developed evaluation of tenders, estimation of expenses and cash flow for landscaping construction projects</li>
                             <li>Directed capital and employee allocations</li>
                             <li>Communicated effectively and strategically with clients</li>
@@ -144,12 +146,10 @@
                             <li>Sold company in August 2016</li>
                         </ul>
                     </div>
+                    <div class="arrow-down" id="cuttingEdgeDetailsButton" onclick="this.classList.toggle('active');"></div>
                 </div>
-                <div class="arrow" id="cuttingEdgeDetailsButton" href="javascript:void(0);" onclick="toggleButton(this)"></div>
             </div>
-        </div>
 
    </body>
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="scripts.js"></script>
+
