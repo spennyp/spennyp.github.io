@@ -49,3 +49,45 @@ geojson.features.forEach(function (marker) {
         .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
         .addTo(map);
 });
+
+// disable map rotation using right click + drag
+map.dragRotate.disable();
+ 
+// disable map rotation using touch rotation gesture
+map.touchZoomRotate.disableRotation();
+
+map.on('load', function() {
+    map.addSource('population', {
+    'type': 'vector',
+    'url': 'mapbox://mapbox.660ui7x6'
+    });
+     
+    map.addLayer({
+    'id': 'state-population',
+    'source': 'population',
+    'source-layer': 'state_county_population_2014_cen',
+    'maxzoom': 1,
+    'type': 'fill',
+    'filter': ['==', 'isState', true],
+    'paint': {
+    'fill-color': [
+    'interpolate',
+    ['linear'],
+    ['get', 'population'],
+    0, '#F2F12D',
+    500000, '#EED322',
+    750000, '#E6B71E',
+    1000000, '#DA9C20',
+    2500000, '#CA8323',
+    5000000, '#B86B25',
+    7500000, '#A25626',
+    10000000, '#8B4225',
+    25000000, '#723122'
+    ],
+    'fill-opacity': 0.75
+    }
+    }, 'waterway-label');
+});
+
+// Add legend
+// L.mapbox.legendControl().addLegend('<strong>My walk from the White House to the hill!</strong>').addTo(map);
