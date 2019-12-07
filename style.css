@@ -14,6 +14,10 @@ body {
     margin: 0;
 }
 
+#vantajs {
+    height: 100%;
+}
+
 #indexBody {
     overflow-y: hidden;
 }
@@ -74,6 +78,10 @@ body {
 .entry {
     height: auto;
     display: inline-block;
+}
+
+.entryMediaBox {
+    width: 40%;
 }
 
 .cardMedia, .entryMedia {
@@ -142,7 +150,7 @@ a:hover {
 }
 
 .date {
-    display: flex;
+    display: flex;  
     float: left;
     text-align: left;
     font-size: 12px;
@@ -200,7 +208,7 @@ a:hover {
     margin-right: 3%;
     padding: 0;
     width: 300px;
-    height: 300px;
+    height: 400px;
     float: right
     
 }
@@ -624,21 +632,34 @@ a:hover.projLink {
     }
 }
 
+
 /* MAP STYLES */
 
 #map {
-    margin-top: 50px;
     height: 100%;
     width: 100%;
 }
 
-.marker {
-    background-image: url('img/marker.png');
+.jobMarker {
+    background-image: url('img/map/jobMarker.svg');
     background-size: cover;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.travelMarker {
+    background-image: url('img/map/travelMarker.svg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
 
 .mapboxgl-popup {
@@ -650,30 +671,19 @@ a:hover.projLink {
     font-family: 'Open Sans', sans-serif;
 }
 
-.legend {
-    background-color: #fff;
-    border-radius: 3px;
-    bottom: 30px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
-    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    padding: 10px;
-    position: absolute;
-    right: 10px;
-    z-index: 1;
-}
-    
-.legend h4 {
-    margin: 0 0 10px;
-}
-    
-.legend div span {
-    border-radius: 50%;
-    display: inline-block;
-    height: 10px;
-    margin-right: 5px;
-    width: 10px;
+.moreInfoButton {
+    width: 80%;
+    color: white;
+    border-radius: 10px;
 }
 
+.jobMoreInfoButton {
+    background-color: rgb(168, 35, 48);
+}
+
+.travelMoreInfoButton {
+    background-color: rgb(75, 136, 255);
+}
 
 /* .modal {
     width: 500px !important;
@@ -699,8 +709,100 @@ a:hover.projLink {
     margin: auto;
 }
 
-#vantajs {
+.legend {
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    width: 120px;
+}
+
+.legendEntry {
+    /* padding-bottom: 10px; */
+    width: 100%;
+    height: 30px;
+}
+
+#bottomLegendEntry {
+    padding-bottom: 0;
+}
+
+.legendInfo {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: 74px;
+}
+
+.checkboxContainerDiv {
+    display: inline-block;
+    width: 26px;
     height: 100%;
 }
 
+.checkboxContainer {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+    padding-left: 3px;
+    padding-top: 3px;
+}
 
+/* Hide the browser's default checkbox */
+.checkboxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxContainer input:checked ~ .checkmark {
+    background-color: rgb(25, 26, 26);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxContainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxContainer .checkmark:after {
+    left: 8px;
+    top: 5px;
+    width: 5px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

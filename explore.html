@@ -29,11 +29,30 @@
     <div id='map'></div>
 
     <div id='state-legend' class='legend'>
-        <h4>Marker Legend</h4>
-        <div><img src="img/marker.png" width=25px height=25px>Jobs</div>
-        <div><span style='background-color: #723122'></span>Projects</div>
-        <div><span style='background-color: #8B4225'></span>Travel</div>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        <div class=legendEntry>
+            <div class=checkboxContainerDiv id=jobToggle>
+                <label class=checkboxContainer>
+                        <input type="checkbox" id=jobCheckbox checked="checked">
+                        <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class=legendInfo>
+                <img src="img/map/legendJobMarker.svg" width=25px height=25px>
+                Jobs 
+            </div>  
+        </div>
+        <div class=legendEntry>
+            <div class=checkboxContainerDiv id=travelToggle>
+                <label class=checkboxContainer>
+                        <input type="checkbox" id=travelCheckbox checked="checked">
+                        <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class=legendInfo>
+                    <img src="img/map/legendTravelMarker.svg" width=25px height=25px>
+                Travel 
+            </div>  
+        </div>
     </div>
 
 
