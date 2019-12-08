@@ -368,6 +368,7 @@ a:hover.projLink {
 
     #profileCardInfoColumn {
         padding-top: 0;
+        width: 100%;
     }
 }
 
@@ -379,13 +380,7 @@ a:hover.projLink {
     }
 }
 
-
-
-@media screen and (max-width: 700px) {
-
-}
-
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 760px) {
     /* Top Nav */
     .topnav a:not(:first-child) {
         display: none;
@@ -459,6 +454,31 @@ a:hover.projLink {
 
     #myTopnav {
         border-bottom: 2px solid gray;
+    }
+
+    #profileCardMediaBox {
+        height: 35%;
+        min-height: 100px;
+    }
+
+    .cardTitle {
+        font-size: 20px;
+    }
+
+    .cardSubtitle {
+        font-size: 16px;
+    }
+
+    .cardDescription {
+        font-size: 14px;
+    }
+
+    #github, #mail, #linkedin {	
+        width: 30px;	
+    }
+
+    .cardDescription {
+        padding: 10px;
     }
 }
 
