@@ -8,6 +8,15 @@ function toggleMenu(x) {
   } 
 }
 
+// Auto formatting code blocks
+$(document).ready(function() { 
+  $("pre code").each(function(){
+    var html = $(this).html();
+    var pattern = html.match(/\s*\n[\t\s]*/);
+    $(this).html(html.replace(new RegExp(pattern, "g"),'\n'));
+  });
+});
+
 $(document).ready(function() { 
   $("#teslaDescriptionButton").click(function() { 
       $("#teslaDescription").slideToggle(); 
@@ -52,5 +61,11 @@ var map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v11'
 });
 
-
+$(document).ready(function() { 
+  $("pre code").each(function(){
+    var html = $(this).html();
+    var pattern = html.match(/\s*\n[\t\s]*/);
+    $(this).html(html.replace(new RegExp(pattern, "g"),'\n'));
+  });
+});
 

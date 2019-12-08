@@ -2,12 +2,11 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3Blbm55cDMiLCJhIjoiY2pnb2I2azZ4MjI3ZjJ4cW4yc
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-55, 55],
-    zoom: 2.5
 });
 map.addControl(new mapboxgl.NavigationControl());
 var layerList = document.getElementById('menu');
 map.setStyle('mapbox://styles/mapbox/dark-v10');
+map.fitBounds([[-130, 60], [20, 20]]);
 
 
 $(document).ready(function() { 
