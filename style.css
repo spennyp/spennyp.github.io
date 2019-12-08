@@ -221,7 +221,6 @@ a:hover.profileLink {
 
 
 /* Projects page */
-
 a.projLink {
     color: rgb(168, 35, 48);
     text-decoration: none;
@@ -499,6 +498,12 @@ a:hover.projLink {
 
     .cardDescription {
         padding: 10px;
+    }
+
+    .project {
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
