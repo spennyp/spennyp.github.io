@@ -1,3 +1,4 @@
+/* General configuration */
 html {
     height: 100%;
     width: 100%;
@@ -12,14 +13,6 @@ body {
     width: 100%;
     overflow-x: hidden;
     margin: 0;
-}
-
-#vantajs {
-    height: 100%;
-}
-
-#indexBody {
-    overflow-y: hidden;
 }
 
 .topnav {
@@ -60,175 +53,175 @@ body {
     box-sizing: border-box; /* Make the 100% reference outside box */
 }
 
-.card, .entry {
-    padding: 20px 20px 20px 20px;
-    text-align: center;
-    border-bottom: 1px solid rgb(223, 223, 223);
-    width: 100%;
-    color: rgb(77, 77, 77);
-    text-decoration: None;
-    display: block;
-    box-sizing: border-box; /* Make the 100% reference outside box */
-}
-
-.card {
-    display: inline-block;
-}
-
-.entry {
-    height: auto;
-    display: inline-block;
-}
-
-.entryMediaBox {
-    width: 40%;
-}
-
-.cardMedia, .entryMedia {
-    display: inline-block;
-    vertical-align: top;
-    height: 100%;
-    width: 30%;
-    float: left;
-    box-sizing: border-box; /* Make the 100% reference outside box */
-    padding-right: 10px;
-    padding-left: 10%;
-    max-width: 300px;
-    max-height: 300px;  
-}
-
-.cardInfo, .entryInfo {
-    display: inline-block;
-    vertical-align: top;
-    float: right;
-    height: 100%;
-    width: 70%;
-    text-align: left;
-    overflow: hidden;
-}
-
-.cardTitle {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.cardDescription {
-    font-size: 18px;
-    padding-top: 10px;
-}
-
-.cardTags {
-    font-size: 12px;
-    padding-top: 10px;
-}
-
 a:hover {
     background-color: rgb(201, 201, 201);
-}
-
-#canvas {
-    position: absolute;
-    display: block;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.entryHeader {
-    display: block;
-    height: 15%;
-    width: 100%;
-}
-
-.entryTitle {
-    display: inline-block;
-    vertical-align: top;
-    float: left;
-    font-size: 25px;
-    font-weight: bold;
-    height: 100%;
-}
-
-.date {
-    display: flex;  
-    float: left;
-    text-align: left;
-    font-size: 12px;
-    line-height: 25px;
-    align-items: bottom;
-    height: 100%;
-}
-
-.entrySubtitle {
-    display: inline-block;
-    width: 100%;
-    font-size: 20px;
-    margin-top: -1px;
-    text-align: left;
-    height: 15%;
-}
-
-.entryDetails {
-    font-size: 16px;
-    height: 60%;
-    width: 100%;
-    text-align: left;
-    display: block;
-}
-
-#profileEntry {
-    border-bottom: none;
-    height: auto;
-    margin-top: 30px;
-}
-
-#profileEntrySubtitle {
-    margin: 10px 0;
-}
-
-#profileEntryInfo {
-    padding-top: 30px;
-    width: 60%;
-}
-
-#profileMediaBox {
-    display: inline-block;
-    width: 40%;
-    height: 100%;
-}
-
-#profileEntryDetailPoints {
-    padding: 0;
-}
-
-#profilePicture {
-    /* width: 40%; */
-    box-sizing: border-box; /* Make the 100% reference outside box */
-    margin-left: auto;
-    margin-right: 3%;
-    padding: 0;
-    width: 300px;
-    height: 400px;
-    float: right
-    
 }
 
 .comingSoon {
     margin-top: 50px;
 }
 
-p+ul {
-    margin-top: -10px;
+
+/* Index Background */
+#vantajs {
+    height: 100%;
 }
 
-/* unvisited link */
+#indexBody {
+    overflow-y: hidden;
+}
+
+
+/* Geneic Card */
+.card {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px 20px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    font-family: 'Roboto', sans-serif;
+    color: rgb(77, 77, 77);
+}
+
+a.card {
+    text-decoration: none;
+}
+
+.cardMediaBox {
+    box-sizing: border-box;
+    overflow: auto;
+    flex: 1 0 0px;
+}
+
+.cardInfoColumn { /* This is needed to make mediaBox and info fill 100% of card that is height: auto */
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.cardInfo {
+    box-sizing: border-box;
+    flex: 1 0 0px;
+}
+
+.cardMedia {
+    box-sizing: border-box;
+    display: block;
+    margin-right: 10px;
+    margin-left: auto;
+    text-align: right;
+    height: 100%;
+    max-width: 100%;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.cardHeader {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: 20%;
+}
+
+.cardSubtitle {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 15%;
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.cardDescription {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: 65%;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.cardTitle {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cardDate {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.cardDate::before {
+    content: "(";
+}
+
+.cardDate::after {
+    content: ")";
+}
+
+
+/* Index Card Modifications */
+#profileCard {
+    border-bottom: none;
+    padding-top: 40px;
+}
+
+#profileCardInfoColumn {
+    width: 65%;
+    padding: 40px 0 30px 0;
+}
+
+#profileCardDescriptionPoints {
+    padding-left: 0;
+}
+
+a:hover.profileLink {
+    background-color: rgba(255, 0, 0, 0);
+}
+
+#profileCardMedia {
+    max-width: none;
+    max-height: none;
+}
+
+
+/* Project Card Modifications */
+.projectCardTags {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 15%;
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+}
+
+.projectCardTags::before {
+    content: "Tags: ";
+}
+
+
+/* Experience Card Modifications */
+.experienceCardDescriptionPoints {
+    margin: 2px 0;
+}
+
+
+/* Projects page */
 
 a.projLink {
     color: rgb(168, 35, 48);
     text-decoration: none;
 }
-
-/* visited link */
 
 .a:visited.projLink {
     color: rgb(168, 35, 48);
@@ -243,6 +236,7 @@ a:hover.projLink {
 #socialLinks {
     margin-top: 20px;
 }
+
 
 /* Toggle Arrow */
 .arrow-down {
@@ -285,6 +279,8 @@ a:hover.projLink {
     transform: rotate(30deg);
 }
 
+
+/* Individualy Project Pages */
 .projectHeader {
     width: 100%;
     height: 60%;
@@ -325,168 +321,76 @@ a:hover.projLink {
     padding: 10px 0 40px 0;
 }
 
-@media screen and (min-width: 1150px) {
-    /* This overrides the jqery display: none property */
-    .entryDetails {
-        display: block !important;
-    }
-}
 
 @media screen and (max-width: 1150px) {
-    #profileMediaBox {
-        width: 100%;
-    } 
-
-    #profilePicture {
-        box-sizing: border-box; /* Make the 100% reference outside box */
-        margin: 0 auto;
-        float: none;
-    }
-
-    #profileEntryInfo {
-        width: 100%;
-    }
-
-    #profileEntry {
-        height: auto;
-    }
-
-    #profileEntryDetailPoints {
-        width: 100%;
-        text-align: center;
-        padding: 0
-    }
-
     .arrow-down {
         display: block;
     }
-    
-    .entry {
-        display: block;
-        height: auto;
-        overflow: hidden;
-    }
-
-    .entryMedia {
-        display: block;
-        padding: 0px;
-        width: 100%;
-        height: 50%;
-        max-height: 150px;
-        text-align: center;
-        max-width: 200px;
-        float: none;
-        margin: 0 auto;
-    }
-
-    #profilePicture {
-        width: 200px;
-        height: 200px;
-        max-height: none;
-    }
-
-    .entryInfo {
-        height: 50%;
-        width: 100%;
-    }
-
-    .entryHeader {
-        height: 35%;
-        width: 100%;
-    }
-
-    .entryTitle {
-        display: block;
-        width: 100%;
-        height: 60%;
-        text-align: center;
-    }
-
-    .date {
-        display: block;
-        width: 100%;
-        height: 40%;
-        text-align: center;
-    }
-
-    .entrySubtitle {
-        width: 100%;
-        text-align: center;
-        padding-top: 5px;
-        height: 30%;
-    }
-
-    .entryDetailHeader {
-        text-align: center;
-    }
-
-    .entryDetails {
-        display: none;
-        width: 100%;
-    }
-
-    #aboutMeDetails {
-        padding-top: 10px;
-        display: block;
-        text-align: center;
-    }
-
-    .entryDetailPoints {
-        width: 60%;
-        padding: 0 20%;
-    }
-
-    .cardTitle {
-        font-size: 20px;
-        font-weight: bold;
-    }
 
     .cardDescription {
-        font-size: 15px;
+        display: none;
+    }
+
+    .projectCardTags {
+        display: none;
+    }
+
+    .card, .cardInfoColumn, .cardInfo, .cardHeader, .cardTitle, .cardDate, .cardSubtitle {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cardMediaBox {
+        width: 100%;
+        height: 150px;
     }
 
     .cardMedia {
-        min-width: 120px;
-        padding-left: 8%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    #profileDetails {
+    .cardDescription {
+        padding: 10px 20%;
+    }
+
+    #profileCardDescription {
         display: block;
+        width: 100%;
         text-align: center;
     }
 
-    #profileEntryInfo {
-        width: 100%;
+    #profileCardMediaBox {
+        height: 300px;
+    }
+
+    #profileCardInfoColumn {
         padding-top: 0;
     }
 }
 
-@media screen and (max-width: 700px) {
+
+@media screen and (min-width: 1150px) {
+    /* This overrides the jqery display: none property */
     .cardDescription {
-        font-size: 13px;
-    }
-
-    .cardTags {
-        display: None;
-    }
-
-    .cardMedia {
-        min-width: 120px;
-        padding-left: 8%;
-    }
-
-    .entryDetailPoints {
-        width: 80%;
-        padding: 0 10%;
+        display: block !important;
     }
 }
 
+
+
+@media screen and (max-width: 700px) {
+
+}
+
 @media screen and (max-width: 475px) {
+    /* Top Nav */
     .topnav a:not(:first-child) {
         display: none;
     }
 
-    /* Menu Icon */
     .bar1, .bar2, .bar3 {
         width: 25px;
         height: 2px;
@@ -553,83 +457,13 @@ a:hover.projLink {
         color: black;
     }
 
-    #github, #mail, #linkedin {
-        width: 30px;
-    }
-
     #myTopnav {
         border-bottom: 2px solid gray;
-    }
-
-    .entryMedia {
-        max-height: 100px;
-    }
-
-    .entryTitle {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-    .entrySubtitle {
-        font-size: 16px;
-    }
-
-    .date {
-        font-size: 12px;
-        display: inline;
-    }
-
-    .entryDetails {
-        margin-top: 10px;
-        font-size: 14px;
-        text-align: left;
-    }
-
-    .cardDescription {
-        display: None;
-    }
-
-    .card {
-        height: 10%;  
-    }
-
-    .cardTitle {
-        font-size: 16px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    .cardMedia {
-        min-width: 120px;
-        padding-left: 2%;
-    }
-
-    .cardInfo {
-        width: 50%;
-        float: left;
     }
 }
 
 @media screen and (max-width: 285px) {
-    .main .card {
-        height: 16%;
-    }
 
-    .cardMedia {
-        display: block;
-        height: 50%;
-        width: 100%;
-        padding: 0px 10px;
-    }
-
-
-    .cardInfo {
-        height: 50%;
-        width: 100%;
-        text-align: center;
-    }
 }
 
 
