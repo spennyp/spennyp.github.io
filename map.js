@@ -34,8 +34,6 @@ $(document).ready(function() {
     }); 
 });
 
-
-
 var jobGeoJson = {
     type: 'FeatureCollection',
     features: [{

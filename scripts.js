@@ -9,38 +9,38 @@ function toggleMenu(x) {
 }
 
 $(document).ready(function() { 
-  $("#teslaDetailsButton").click(function() { 
-      $("#teslaDetails").slideToggle(); 
+  $("#teslaDescriptionButton").click(function() { 
+      $("#teslaDescription").slideToggle(); 
   }); 
 });
 
 $(document).ready(function() { 
-  $("#supermileageDetailsButton").click(function() { 
-      $("#supermileageDetails").slideToggle(); 
+  $("#supermileageDescriptionButton").click(function() { 
+      $("#supermileageDescription").slideToggle(); 
   }); 
 });
 
 $(document).ready(function() { 
-  $("#hydroDetailsButton").click(function() { 
-      $("#hydroDetails").slideToggle(); 
+  $("#hydroDescriptionButton").click(function() { 
+      $("#hydroDescription").slideToggle(); 
   }); 
 });
 
 $(document).ready(function() { 
-  $("#robotCompDetailsButton").click(function() { 
-      $("#robotCompDetails").slideToggle(); 
+  $("#robotDescriptionButton").click(function() { 
+      $("#robotDescription").slideToggle(); 
   }); 
 });
 
 $(document).ready(function() { 
-  $("#logicAndFormDetailsButton").click(function() { 
-      $("#logicAndFormDetails").slideToggle(); 
+  $("#logicDescriptionButton").click(function() { 
+      $("#logicDescription").slideToggle(); 
   }); 
 });
 
 $(document).ready(function() { 
-  $("#cuttingEdgeDetailsButton").click(function() { 
-      $("#cuttingEdgeDetails").slideToggle(); 
+  $("#cuttingEdgeDescriptionButton").click(function() { 
+      $("#cuttingEdgeDescription").slideToggle(); 
   }); 
 });
 
