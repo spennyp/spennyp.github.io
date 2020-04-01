@@ -15,6 +15,10 @@ body {
     margin: 0;
 }
 
+ul {
+    margin-top: 5px;
+}
+
 .topnav {
     background-color: rgb(255, 255, 255);
     color: gray;
