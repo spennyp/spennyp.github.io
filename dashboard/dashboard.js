@@ -60,9 +60,9 @@ function setTimeOfDay() {
     const today = new Date();
     const h = today.getHours();
     var TOD = "evening"
-    if (h > 5 && h < 12) {
+    if (h >= 5 && h < 12) {
         TOD = "morning"
-    } else if (h > 12 && h < 17) {
+    } else if (h >= 12 && h <= 17) {
         TOD = "afternoon"
     }
 
