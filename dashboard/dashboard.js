@@ -31,6 +31,7 @@ function formatTime(i) {
 }
 
 async function refreshPage() {
+    document.getElementById("searchText").select(); // Make the cursor select the search box on load
     setName();
     setTimeOfDay();
     updateBackgroundImg();

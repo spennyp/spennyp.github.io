@@ -121,11 +121,11 @@ body {
     padding: 0 45px 0 15px;
     font-family: 'Roboto';
     font-size: 15px;
-    opacity: 0.5;
 }
 
-#searchText:focus {
-    opacity: 1;
+/* Placehodler triggers opacity change when typed */
+#searchText:placeholder-shown {
+    opacity: 0.5;
 }
 
 #searchButton {
