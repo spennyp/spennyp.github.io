@@ -20,8 +20,8 @@ var phiDot2IC = 4 * granularity;
 var canvasWidth = window.innerWidth; // may want to set based on screen size
 var canvasHeight = window.innerHeight;
 var strokeColor = "rgb(168, 35, 48)";
-var l1 = Math.min(window.innerHeight / 4, window.innerWidth / 4)
-var l2 = Math.min(window.innerHeight / 4, window.innerWidth / 4)
+var l1 = Math.min(window.innerHeight / 4 - 10, window.innerWidth / 4 - 10)
+var l2 = Math.min(window.innerHeight / 4 - 10, window.innerWidth / 4 - 10)
 
 var theta1 = [];
 var phi1 = [];
