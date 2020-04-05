@@ -7,8 +7,8 @@ var granularity = 10;
 var deltaT = 0.01; // Secs
 var maxTime = 50;
 var setTime = 30.0;
-var maxThetaSpeed = 15.0 * granularity;
-var maxPhiSpeed = 30.0 * granularity;
+var maxThetaSpeed = 16.0 * granularity;
+var maxPhiSpeed = 16.0 * granularity;
 
 // Default initial conditions
 var thetaDot1IC = 16 * granularity;
