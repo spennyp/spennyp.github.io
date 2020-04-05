@@ -177,7 +177,6 @@ var harmonicDifferenceDenomerator = 10;
 var numeratorAddition = -1;
 async function animateHarmonics() {
     if (shouldAnimateHarmonics) {
-        console.log(harmonicDifferenceNumerator)
         harmonicDifferenceNumerator += numeratorAddition;
         if (harmonicDifferenceNumerator == numeratorAddition) { // Skip the case when they are the same
             harmonicDifferenceNumerator += numeratorAddition;
@@ -208,7 +207,6 @@ async function animateHarmonics() {
 
 async function animateTo(newThetaDot1IC, newPhiDot1IC, newThetaDot2IC, newPhiDot2IC, speed) {
     return new Promise(async (resolve, reject) => {
-        console.log("Animating to")
         var deltaThetaDot1IC = (newThetaDot1IC - thetaDot1IC);
         var deltaPhiDot1IC = (newPhiDot1IC - phiDot1IC);
         var deltaThetaDot2IC = (newThetaDot2IC - thetaDot2IC);
@@ -216,7 +214,6 @@ async function animateTo(newThetaDot1IC, newPhiDot1IC, newThetaDot2IC, newPhiDot
 
         var maxDistnace = Math.max(Math.abs(deltaThetaDot1IC), Math.abs(deltaPhiDot1IC), Math.abs(deltaThetaDot2IC), Math.abs(deltaPhiDot2IC))
         var refreshes = (maxDistnace/speed)*100; 
-        console.log(refreshes)
 
         for (var i = 1; i <= refreshes; i++) {
             thetaDot1IC += deltaThetaDot1IC / refreshes;
@@ -233,7 +230,6 @@ async function animateTo(newThetaDot1IC, newPhiDot1IC, newThetaDot2IC, newPhiDot
                 break;
             }
         }
-        console.log("finished animation")
         resolve();
     })
 }
@@ -275,6 +271,12 @@ function computePosition() {
     y.push(nextY)
 }
 
+function interuptHarmonicAnimation() {
+    shouldAnimateHarmonics = false;
+    var checkBox = document.getElementById("animateHarmonicsCheckBox");
+    checkBox.checked = false;
+}
+
 function setupSliders() {
     // Set max vals
     setTimeRange.max = maxTime;
@@ -304,31 +306,30 @@ function setupSliders() {
     thetaDot1Range.oninput = function() {
         thetaDot1Value.innerHTML = this.value;
         thetaDot1IC = this.value;
+        interuptHarmonicAnimation();
         refreshParameters();
         drawGraph();
     }
     phiDot1Range.oninput = function() {
         phiDot1Value.innerHTML = this.value;
         phiDot1IC = this.value;
+        interuptHarmonicAnimation();
         refreshParameters();
         drawGraph();
     }
     thetaDot2Range.oninput = function() {
         thetaDot2Value.innerHTML = this.value;
         thetaDot2IC = this.value
+        interuptHarmonicAnimation();
         refreshParameters();
         drawGraph();
     }
     phiDot2Range.oninput = function() {
-        console.log("HERE")
         phiDot2Value.innerHTML = this.value;
         phiDot2IC = this.value;
+        interuptHarmonicAnimation();
         refreshParameters();
         drawGraph();
-        console.log(thetaDot1IC)
-        console.log(phiDot1IC)
-        console.log(thetaDot2IC)
-        console.log(phiDot2IC)
     }
 }
 
