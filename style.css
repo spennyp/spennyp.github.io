@@ -19,6 +19,17 @@ ul {
     margin-top: 5px;
 }
 
+figcaption {
+    text-align: center;
+}
+
+.equation {
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .topnav {
     background-color: rgb(255, 255, 255);
     color: gray;
