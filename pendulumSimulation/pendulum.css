@@ -204,3 +204,26 @@ canvas {
     from {opacity: 0;}
     to {opacity:1 ;}
 }
+
+@media screen and (max-width: 580px) {
+    canvas {
+        height: calc(100% - 200px);;
+    }
+
+    #controls {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #sliderControlContainer {
+        display: inline-block;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .sliderRange {
+        width: auto
+    }
+}
