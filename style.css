@@ -142,9 +142,12 @@ a {
 
 .learnMore {
     display: block;
+    vertical-align: middle;;
     text-decoration: none;
     padding-top: 5px;
+    height: auto;
     color: #0667EB;
+    vertical-align: middle;
 }
 
 #mainPage {
@@ -333,4 +336,10 @@ figcaption {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.material-icons.md-18 { 
+    font-size: 18px; 
+    vertical-align: bottom;
+    margin-left: -1px;
 }
