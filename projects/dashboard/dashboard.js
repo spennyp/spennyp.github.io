@@ -1,4 +1,4 @@
-const baseImgPath = "../img/dashboard/" 
+const baseImgPath = "../../img/dashboard/" 
 
 function load() {
     startClock();
