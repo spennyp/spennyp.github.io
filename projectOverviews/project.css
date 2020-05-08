@@ -1,0 +1,40 @@
+body {
+    overflow-y: scroll;
+}
+
+.project {
+    width: 700px;
+    margin: auto;
+    padding: 40px;
+    color: black;
+    font-size: 20px;
+}
+
+.projectTitle {
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+
+.projectPhoto {
+    width: 100%;
+    object-fit: cover; /*Crop image to fit (to maintain aspect ratio)*/
+    margin-bottom: 20px;
+}
+
+ul {
+    margin: 0;
+}
+
+.sectionTitle {
+    font-size: 25px;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+#projectLink {
+    position: fixed;
+    right: 10px;
+    top: 50px;
+    color:
+}
+

@@ -3,78 +3,258 @@
     <head>
         <title>Spencer Perkins</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="icon" href="img/s.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="script.js"></script>
     </head>
-    <body id="indexBody">
-        <div class="topnav" id="myTopnav">
-            <a href="index.html" class="active">Spencer Perkins</a>
-            <a href="experience.html">Experience</a>
-            <a href="projects.html">Projects</a>
-            <a href="explore.html">Explore</a>
-            <a href="javascript:void(0);" class="icon" onclick="toggleMenu(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-            </a>
-        </div>
-            <div class="main">
-                <div id="vantajs">
-                    <div class="card" id="profileCard">
-                        <div class="cardMediaBox" id="profileCardMediaBox">
-                            <img class="cardMedia" id=profileCardMedia src="img/profilePicture.png"/>
-                        </div>
-                        <div class="cardInfoColumn" id=profileCardInfoColumn>
-                            <div class="cardInfo">
-                                <div class="cardHeader">
-                                    <div class="cardTitle">Hey, I'm Spencer!</div>
-                                </div>
-                                <div class="cardSubtitle">I'm a 4th year Engineering Physics Student at UBC, <br> minoring in Entrepreneurship</div>
-                                <div class="cardDescription" id="profileCardDescription">
-                                    <div class=experienceCardDescriptionHeader>I strive to use my skills in engineering and technology to make a positive impact in the world</div>
-                                    <ul id=profileCardDescriptionPoints>                         
-                                        <div id="socialLinks"> 
-                                            <a href="https://www.linkedin.com/in/spencerjperkins/", target="_blank" class=profileLink><img src="img/linkedin.svg" width="50" id="linkedin"/></a>
-                                            <a href="https://github.com/spennyp", target="_blank" class=profileLink><img src="img/github.svg" width="50" id="github"/></a>
-                                            <a href="mailto:hello@spencerperkins.me" class=profileLink><img src="img/mail.svg" width="50" id="mail"/></a>
-                                        </div>
-                                        <p>hello@spencerperkins.me</p>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+    <body>
+        <div id="mainPage">
+            <div class="leftColumn">
+                <div id="header">
+                    <div id="topHeader">
+                        <div id="name">Spencer Perkins</div>
+                        <div id="about" onclick="openAbout()">About</div>
                     </div>
+
+                    <div id="bottomHeader">
+                        Engineering Physics
+                    </div>
+
                 </div>
+                <ul id="projectList">
+                    <li class="selectedProject">Pendulum Harmonograph Art</li>
+                    <li>Autonomous Robot Competition</li>
+                    <li>CAN Steering Wheel</li>
+                    <li>CAN Bus Communication</li>
+                    <li>Accoustic Hydrogen Sensor</li>
+                    <li>Raspberry Pi Foreign Object Detection</li>
+                    <li>Interactive Wall</li>
+                    <li>Loan Application</li>
+                    <li>Homepage Dashboard</li>
+                </ul>
+                <div id="footer">
+                    <ul id="links">
+                        <li><a href="https://github.com/spennyp" target=_>Github</a></li>
+                        <li><a href="https://www.linkedin.com/in/spencerjperkins/" target=_>LinkedIn</a></li>
+                        <li><a href="mailto:hello@spencerperkins.me">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul id="rightColumn" onscroll="updateProjectSelection()">
+                <li>
+                    <img src="img/pendulumHarmonograph.jpeg">
+                    <div class="projectOverview">
+                        A pendulum harmonograph using 2, 3D pendulums to produce some beautiful art. Equations of motion are solved using Lagrangian mechanics to create the simulation. Within the simulation initial conditions can be manually set, and the model can be animated in time, and through the harmonics.
+                        <a class="learnMore" href="./projectOverviews/pendulumHarmonograph.html" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/robot.jpeg">
+                    <div class="projectOverview">
+                        Designed and built a fully autonomous robot in a team of 4 to navigate a course, going around obsticles, over gaps, and across bridges while picking up objects along the way. Our robot finished 2nd place among 16 teams, and scored the most points overall.
+                        <a class="learnMore" href="https://breaching-tower.github.io" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/steeringWheel.png">
+                    <div class="projectOverview">
+                        Redeisnged the steering wheel for UBC Supermileage's electric UrbanConcept vehicle. This includes the electrical, mechanical, and software components. This wheel is designed to give the driver useful information displayed on a screen by connecting to the vehicles CAN bus which I previously implemented.
+                        <a class="learnMore" href="./projectOverviews/steeringWheel.html" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/CANbus.svg">
+                    <div class="projectOverview">
+                        Implemented a CAN bus microcontroller communcation system within UBC Supermileage's electric UrbanConcept vehicle. This acts as the brains for the vehicle allowing critical information to easily be accessible throughtout. It is a robsut and scalable communcation solution.
+                        <a class="learnMore" href="./projectOverviews/canbus.html" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/HFC.svg">
+                    <div class="projectOverview">
+                        Capstone project where we created an accoustic sensor system capable of determining the concentration of hydrogen in a gas mixture in the anode of a hydrogen fuel cell. This project is a cost effective solution to increace fuel cell efficency and life expectancy by finding optimal purge times.
+                        <a class="learnMore" href="./projectOverviews/hfc.html" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/fod.png">
+                    <div class="projectOverview">
+                        Implemented foreign object detection using background subtraction on a Raspberry Pi with openCV. This is useful to detect manufacturing defects in a production line; for an extreamly memory efficient securty system to only record when a foreign object is detectected; and in many other cases.
+                        <a class="learnMore" href="./projectOverviews/fod.html" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/interactiveWall.png">
+                    <div class="projectOverview">
+                        Mac OS developer on the team that created the interactive wall at UBC to help educate the public on the history of Indian residential schools in Canada. The project runs across 3, 100" touch screens, with a Raspberry Pi behind each screen sending touch data to the iMac running the installation. It uses a caching server built with node.js and PostgreSQL to quickly serve the media.
+                        <a class="learnMore" href="http://logicandform.com/work/interactive-wall/" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/loan.png">
+                    <div class="projectOverview">
+                        A loan calculator to help educate users on how loans work, and help estimate how much a loan may cost. This project also includes a baseplate for an application for creating, managing and paying off peer to peer loans.
+                        <a class="learnMore" href="./projectOverviews/loan.html" target=_>Learn More ></a> 
+                    </div>
+                </li>
+                <li>
+                    <img src="img/dashboard.jpg">
+                    <div class="projectOverview">
+                        A simple homepage dashboard similar to momentum but lighter weight that will work for all browsers. Includes a new background image on every load, personal greeting message, time of day, location based weather, a search bar, and the date.
+                        <a class="learnMore" href="./projectOverviews/dashboard.html" target=_>Learn More ></a> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="aboutPage">
+            <div id="closeButton" onclick="closeAbout()">Close</div>
+            <div id="aboutBody">
+                <div id="aboutHeader">Hello, I'm Spencer</div>
+                <div id="aboutInfo">
+                    I'm a 4th year Engineering Physics student at the University of British Columbia. <br>
+                    I strive to use my skills in engineering and technology to make a positive impact in the world. <br><br>
+                    Let's grab coffee: hello@spencerperkins.me
+                </div>
+                <hr>
+                
+                <div id="experienceTitle">Experience</div>
+                <div id="experienceBox"> 
+                    <ul id="experienceList">
+                        <li class="selectedJob">NVIDIA</li>
+                        <li>Tesla</li>
+                        <li>Supermileage</li>
+                        <li>BC Hydro</li>
+                        <li>Logic&Form</li>
+                        <li>Cutting Edge</li>
+                    </ul>
+
+                    <ul id="experienceDetails">
+                        <!-- NVIDIA -->
+                        <li class="jobDetials">
+                            <div class="jobDate">MAY 2020 - PRESENT</div>
+                            <div class="jobTitle">Hardware Robotics Engineering Intern @ <a href="https://www.nvidia.com/en-us/" target=_>NVIDIA</a></div>
+                            <div class="jobTeam">Issac SDK</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Implemented peripherals using communication protocols such as CAN, i2c, SPI, RS-232/485 
+                                </li>
+                                <li>
+                                    More coming soon
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Tesla -->
+                        <li class="jobDetials hidden">
+                            <div class="jobDate">SEPT - DEC 2019</div>
+                            <div class="jobTitle">Production Engineering Intern @ <a href="https://www.tesla.com" target=_>Tesla</a></div>
+                            <div class="jobTeam">Model 3 Battery Pack</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Implemented a fault log datatype with Python, SQL, and Tableau to scan the 
+                                    state of the production line (Ignition) when a fault occurs, which allows root casing 
+                                    faults saving Tesla $2.4M per year in downtime
+                                </li>
+                                <li>
+                                    Implemented a fleet of Raspberry Pi's with computer vision to replace all the 
+                                    cameras on the line for foreign object and non-conformance detection resulting 
+                                    in a saving of $3.1M per year
+                                </li>
+                                <li>
+                                    Created Kubernetes Kubeless functions and Kubernetes API's that automate tasks on the production line with python and mySQL
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Supermileage -->
+                        <li class="jobDetials hidden">
+                            <div class="jobDate">2016 - PRESENT</div>
+                            <div class="jobTitle">Electrical Lead @ <a href="https://www.supermileage.ca" target=_>UBC Supermileage</a></div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Redesigned the steeting wheel in our Electric Urban Concept vehicle, including mechanical, electrcial and software
+                                </li>
+                                <li>
+                                    Implemented a CAN bus microcontroller communication system in C++ in the Electric Urban Concept vehicle
+                                </li>
+                                <li>
+                                    Attended Shell Ecomarathon Americas 2019 where our Prototype Vehicle finished in 2nd achieving 1371 MPG
+                                </li>
+                                <li>
+                                    Redesigned our Prototype vehicle's drivetrain to move from chain to belt drive
+                                </li>
+                                <li>
+                                    Redesigned the fuel system on our Prototype Vehicle
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- BC Hydro -->
+                        <li class="jobDetials hidden">
+                            <div class="jobDate">MAY - SEPT 2019</div>
+                            <div class="jobTitle">Electrical Engineering Intern @ <a href="https://www.bchydro.com/index.html" target=_>BC Hydro</a></div>
+                            <div class="jobTeam">Power Distribution Planning</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Developed an in house substation load forecast with Tableau, SQL and batch scripts saving BC Hydro $10k per year
+                                </li>
+                                <li>
+                                    Developed a power factor calculation tool that is over 100 times faster than the previos methods
+                                </li>
+                                <li>
+                                    Performed duct bank thermal analysis to determine maximum allowable currents
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Logic&From -->
+                        <li class="jobDetials hidden">
+                            <div class="jobDate">JAN - SEPT 2018</div>
+                            <div class="jobTitle">Creative Software Engineering Intern @ <a href="http://logicandform.com" target=_>Logic&Form</a></div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Agile developer in Swift for macOS, creating an interactive wall spanning 3, 100" touch screens to educate the public on the history of Indian Residential Schools in Canada
+                                </li>
+                                <li>
+                                    Worked with Raspberry Pi's in Python to send touch data from the touch screens, to the iMac running the main installation, where touches were turned into custom gestures for macOS
+                                </li>
+                                <li>
+                                    Created caching server in Javascript with node.js and postgreSQL to quickly serve media
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Cutting Edge Lawn and Landscape -->
+                        <li class="jobDetials hidden">
+                            <div class="jobDate">2013 - 2016</div>
+                            <div class="jobTitle">Founder and Owner @ <span style="font-weight: 500">Cutting Edge Lawn and Landscape</span></div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Developed evaluation of tenders, estimation of expenses and cash flow for landscaping construction projects
+                                </li>
+                                <li>
+                                    Directed capital and employee allocations
+                                </li>
+                                <li>
+                                    Communicated effectively and strategically with clients
+                                </li>
+                                <li>
+                                    Achieved gross seasonal revenue of $45 000
+                                </li>
+                                <li>
+                                    Sold company in August 2016
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
    </body>
 </html>
-<script src="three.js"></script>
-<script src="vanta.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="scripts.js"></script>
-<script>
-    if ($(window).width() > 960) {
-        VANTA.NET({
-        el: "#vantajs",
-        color: 0xA82330,
-        backgroundColor: 0xffffff,
-        maxDistance: 22.00,
-        spacing: 18.00,
-        showDots: false
-        })
-    } else {
-        VANTA.NET({
-        el: "#vantajs",
-        color: 0xA82330,
-        backgroundColor: 0xffffff,
-        maxDistance: 16.00,
-        spacing: 25.00,
-        showDots: false
-        })
-    }
-</script>
-      
-
-

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="dashboard.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,500" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../img/s.png">
+        <script src="dashboard.js"></script>
+    </head>
+    <body onload="load()">
+
+        <div id="top">
+            <div id="date">
+                <div id="month">---</div>
+                <div id="day">--</div>
+            </div>
+            <div id="weather">
+                <div id="topWeather">
+                    <img id="weatherIcon" src="../img/dashboard/weather/default.svg">
+                    <div id="temp">--&deg</div>
+                </div>
+                <div id="city">--------</div>
+            </div>
+        </div>
+
+        <form id="searchForm" action="https://www.google.com/search" method="get" name="searchform">
+            <!--Empty placeholder trigger opacity change when typed-->
+            <input id="searchText" class="form-control search" name="q" type="text" placeholder=" "> 
+            <button id="searchButton" type="submit"><img src="../img/dashboard/searchIcon.svg"></button>
+        </form>
+  
+        <div id="time"></div>
+
+        <div id="welcomeMessage">Good <span id="TOD">afternoon</span>, <span id="name">{pass name param}</span>.</div>
+
+        <a href="https://www.spencerperkins.me"><img id="myWebsiteIcon" src="../img/s.png"></a>
+   </body>
+</html>
+
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spencer Perkins</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
+        <script src="scripts.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/s.png">
+    </head>
+    <body>
+        <div class="topnav" id="myTopnav">
+            <a href="index.html">Spencer Perkins</a>
+            <a href="experience.html" class="active">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="explore.html">Explore</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+            </a>
+        </div>
+
+        <div class="main"> 
+            <div class="card">
+                <div class="cardMediaBox">
+                    <img class="cardMedia" src="img/tesla.svg"/>
+                </div>
+                <div class=cardInfoColumn>
+                    <div class="cardInfo">
+                        <div class="cardHeader">
+                            <div class="cardTitle">Tesla</div>
+                            <div class="cardDate">Sept 2019 - Present</div>
+                        </div>
+                        <div class="cardSubtitle">Production Engineering Intern, Model 3 Battery Pack</div>
+                        <div class="cardDescription" id=teslaDescription>
+                            <div class=experienceCardDescriptionHeader>Tesla is the leading electric car manufacturer in the world</div>
+                            <ul class=experienceCardDescriptionPoints>                         
+                                <li>Implemented a fault log datatype with Python, SQL, and Tableau in to scan the state of the production line (Ignition) when a fault occurs that allows root casing faults saving Tesla <b>$2.4M</b> per year in downtime</li>
+                                <li>Created Kubernetes Kubeless functions and Kubernetes API's that automate tasks on the production line with python and mySQL</li>
+                                <li>Implemented a fleet of Raspberry Pi's with computer vision to replace all the cameras on the line for foreign object and non-conformance detection resulting in a saving of <b>$3.1M</b> per year</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="arrow-down" id="teslaDescriptionButton" onclick="this.classList.toggle('active');"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardMediaBox">
+                    <img class="cardMedia" src="img/supermileage.png"/>
+                </div>
+                <div class=cardInfoColumn>
+                    <div class="cardInfo">
+                        <div class="cardHeader">
+                            <div class="cardTitle">UBC Supermileage Student Team</div>
+                            <div class="cardDate">Sept 2016 - Present</div>
+                        </div>
+                        <div class="cardSubtitle">Electrical Lead, previously power train team member</div>
+                        <div class="cardDescription" id=supermileageDescription>
+                            <div class=experienceCardDescriptionHeader>UBC Supermileages is in pursuit of designing the most efficent vehicles possible</div>
+                            <ul class=experienceCardDescriptionPoints>                         
+                                <li>Redeisgned the <a class="projLink" href="projects/steeringWheel.html">steeting wheel</a> in our Electric Urban Concept vehicle, including mechanical, electrcial and software</li>
+                                <li>Implemented a <a class="projLink" href="projects/can.html">CAN bus</a> microcontroller communication system in C++ in the Electric Urban Concept vehicle</li>
+                                <li>Attended Shell Ecomarathon Americas 2019 where our Prototype Vehicle finished in 2nd achieving 1371 MPG</li>
+                                <li>Redesigned our Prototype vehicle's drivetrain to move from chain to belt drive</li>
+                                <li>Redesigned the fuel system on our Prototype Vehicle</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="arrow-down" id="supermileageDescriptionButton" onclick="this.classList.toggle('active');"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardMediaBox">
+                    <img class="cardMedia" src="img/bcHydro.svg"/>
+                </div>
+                <div class=cardInfoColumn>
+                    <div class="cardInfo">
+                        <div class="cardHeader">
+                            <div class="cardTitle">BC Hydro</div>
+                            <div class="cardDate">May - Sept, 2019</div>
+                        </div>
+                        <div class="cardSubtitle">Electrical Engineering Intern, Power Distribution Planning</div>
+                        <div class="cardDescription" id=hydroDescription>
+                            <div class=experienceCardDescriptionHeader>BC Hydro is the electrcial utility in British Columbia</div>
+                            <ul class=experienceCardDescriptionPoints>                         
+                                <li>Developed an in house substation load forecast with Tableau, SQL and batch scripts <br> saving BC Hydro tens of thousands of dollars</li>
+                                <li>Developed a power factor calculation tool that is over 100 times faster than the previos methods</li>
+                                <li>Performed duct bank thermal analysis to determine maximum allowable currents</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="arrow-down" id="hydroDescriptionButton" onclick="this.classList.toggle('active');"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardMediaBox">
+                    <img class="cardMedia" src="img/robot.jpeg"/>
+                </div>
+                <div class=cardInfoColumn>
+                    <div class="cardInfo">
+                        <div class="cardHeader">
+                            <div class="cardTitle">UBC Engineering Physics Robot Competition</div>
+                            <div class="cardDate">Summer 2018</div>
+                        </div>
+                        <div class="cardSubtitle">Electrical and Software Specialist</div>
+                        <div class="cardDescription" id=robotDescription>
+                            <div class=experienceCardDescriptionHeader>Designed and build a fully autonomous, dual stage robot in a team of 4</div>
+                            <ul class=experienceCardDescriptionPoints>                         
+                                <li>Robot sucessfully navigated a course around obsticles, over gaps and bridges while avoiding trip wires and picking up objects along the way</li>
+                                <li>Designed and built the circuits that ran the robot</li>
+                                <li>Developed the code in C++, which include PID edge following, object and cliff detection, inter robot communication, dual direction PWM motor controls, a full menu system and test suite</li>
+                                <li><a class="projLink" href="https://breaching-tower.github.io/" target="_blank">Click for more details</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="arrow-down" id="robotDescriptionButton" onclick="this.classList.toggle('active');"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardMediaBox">
+                    <img class="cardMedia" src="img/logic&Form.png"/>
+                </div>
+                <div class=cardInfoColumn>
+                    <div class="cardInfo">
+                        <div class="cardHeader">
+                            <div class="cardTitle">Logic&Form</div>
+                            <div class="cardDate">Jan - Sept, 2018</div>
+                        </div>
+                        <div class="cardSubtitle">Creative Software Engineering Intern</div>
+                        <div class="cardDescription" id=logicDescription>
+                            <div class=experienceCardDescriptionHeader>Logic&Form invents, designs, and builds interactive experiences</div>
+                            <ul class="experienceCardDescriptionPoints">    
+                                <li>Agile developer in Swift for macOS, creating an <a class="projLink" href="projects/interactiveWall.html">interactive wall</a> spanning 3, 100" touch screens <br> to educate the public on the history of Indian Residential Schools in Canada</li>
+                                <li>Worked with Raspberry Pi's in Python to send touch data from the touch screens, to the iMac <br> running the main installation, where touches were turned into custom gestures for macOS</li>
+                                <li>Created caching server in Javascript with node.js and postgreSQL to quickly serve media</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="arrow-down" id="logicDescriptionButton" onclick="this.classList.toggle('active');"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardMediaBox">
+                    <img class="cardMedia" src="img/cuttingEdge.png"/>
+                </div>
+                <div class=cardInfoColumn>
+                    <div class="cardInfo">
+                        <div class="cardHeader">
+                            <div class="cardTitle">Cutting Edge Lawn and Landscape</div>
+                            <div class="cardDate">2013-2016</div>
+                        </div>
+                        <div class="cardSubtitle">Founder, Owner</div>
+                        <div class="cardDescription" id=cuttingEdgeDescription>
+                            <div class=experienceCardDescriptionHeader>Cutting Edge Lawn and Landscape provides full lawn care and landscaping service</div>
+                            <ul class="entryDetailPoints">    
+                                <li>Developed evaluation of tenders, estimation of expenses and cash flow for landscaping construction projects</li>
+                                <li>Directed capital and employee allocations</li>
+                                <li>Communicated effectively and strategically with clients</li>
+                                <li>Achieved gross seasonal revenue of $45 000 in 3 years</li>
+                                <li>Sold company in August 2016</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="arrow-down" id="cuttingEdgeDescriptionButton" onclick="this.classList.toggle('active');"></div>
+                </div>
+            </div>
+        </div>
+   </body>
+</html>
+

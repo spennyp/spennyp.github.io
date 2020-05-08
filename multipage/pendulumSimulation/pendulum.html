@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spencer Perkins</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="pendulum.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../img/s.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../scripts.js"></script>
+    </head>
+    <body onload="startSimulation()">
+        <canvas id="myCanvas">
+
+        </canvas>
+
+        <div class="popup" onclick="handlePopup()">i
+            <span class="popuptext" id="myPopup">
+                <h3>Art from Spherical Pendulum Harmonograph Simulation</h3>
+
+                This simulates the trajectory of ink dropplets on a canvas produced from the motion of two Spherical
+                pendulums. The user can adjust the painting time (how long the system is left running over the blank canvas), 
+                and the initial angular speeds for both pendulum 1 and 2 using the sliders to produce their own art. 
+
+                <br><br>
+                
+                To learn more about the controls, hover over the information icons throughout the page.
+                To learn more about the physics behind this, how it was made click the links below. Enjoy!
+
+                <br><br>
+
+                <a href="https://www.spencerperkins.me/projectOverviews/pendulumHarmonograph.html">The Physics</a>
+                <br>
+                <a href="https://github.com/spennyp/spennyp.github.io/tree/master/pendulumSimulation">The Code</a>
+            </span>
+        </div>
+          
+        <div id="controls">
+            <div id="sliderControlContainer">
+                <div class="sliderContainer">
+                    <span class="sliderTitle">
+                        Time 
+                        <div class="tooltip">
+                            <span class="infoCircle">i</span>
+                            <span class="tooltiptext">
+                                This is the length of time the pendulums paint on the canvas
+                            </span>
+                        </div>
+                    </span>
+                    <input type="range" min="1" max="50" value="10" class="sliderRange" id="setTimeRange">
+                    <span id="setTimeValue" class="sliderValue"></span>
+                </div>
+                <div class="sliderContainer">
+                    <span class="sliderTitle">
+                        <img src="../img/projects/pendulumHarmonograph/theta1Dot.gif">
+                        <div class="tooltip">
+                            <span class="infoCircle">i</span>
+                            <span class="tooltiptext">
+                                Initial angular veloicty of the elevation angle in system 1
+                             </span>
+                        </div>
+                    </span>
+                    <input type="range" min="1" max="1" value="16" class="sliderRange" id="thetaDot1Range">
+                    <span id="thetaDot1Value" class="sliderValue"></span>
+                </div>
+                <div class="sliderContainer">
+                    <span class="sliderTitle">
+                        <img src="../img/projects/pendulumHarmonograph/phi1Dot.gif">
+                        <div class="tooltip">
+                            <span class="infoCircle">i</span>
+                            <span class="tooltiptext">
+                                Initial angular veloicty of the azimuth angle in system 1
+                            </span>
+                        </div>
+                    </span>
+                    <input type="range" min="4" max="10" value="8" class="sliderRange" id="phiDot1Range">
+                    <span id="phiDot1Value" class="sliderValue"></span>
+                </div>
+                <div class="sliderContainer">
+                    <span class="sliderTitle">
+                        <img src="../img/projects/pendulumHarmonograph/theta2Dot.gif">
+                        <div class="tooltip">
+                            <span class="infoCircle">i</span>
+                            <span class="tooltiptext">
+                                Initial angular veloicty of the elevation angle in system 2
+                            </span>
+                        </div>
+                    </span>
+                    <input type="range" min="1" max="10" value="2" class="sliderRange" id="thetaDot2Range">
+                    <span id="thetaDot2Value" class="sliderValue"></span>
+                </div>
+                <div class="sliderContainer">
+                    <span class="sliderTitle">
+                        <img src="../img/projects/pendulumHarmonograph/phi2Dot.gif">
+                        <div class="tooltip">
+                            <span class="infoCircle">i</span>
+                            <span class="tooltiptext">
+                                Initial angular veloicty of the azimuth angle in system 2
+                            </span>
+                        </div></span>
+                    <input type="range" min="1" max="10" value="8" class="sliderRange" id="phiDot2Range">
+                    <span id="phiDot2Value" class="sliderValue"></span>
+                </div>
+            </div>
+
+            <div id="checkboxControlContrainer">
+                <input type="checkbox" id="animateInTimeCheckBox"  onclick="toggleAnimateInTime()">
+                Animate in Time 
+                <div class="tooltip">
+                    <span class="infoCircle">i</span>
+                    <span class="tooltiptext">
+                        When checked, this will animate the paining in time until the maximum time is reached. 
+                        To best visualize what is going on here start the time slider at 1 and start this animation
+                    </span>
+                </div>
+                <br>
+                <input type="checkbox" id="animateHarmonicsCheckBox"  onclick="toggleAnimateHarmonics()">
+                Harmonics Animation
+                <div class="tooltip">
+                    <span class="infoCircle">i</span>
+                    <span class="tooltiptext">
+                        When checked this will run through different angular velocity initial conitions, slowing down 
+                        around some harmonics that produce a cool painting. This is to help give you an idea of how 
+                        to go about finding more for yourself.
+                    </span>
+                </div>
+            </div>
+
+            <a href="https://www.spencerperkins.me"><img id="myWebsiteIcon" src="../img/s.png"></a>
+        </div>
+   </body>
+</html>
+
+<script src="pendulum.js"></script>
+
+
+

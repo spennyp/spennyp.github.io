@@ -1,43 +1,30 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>Spencer Perkins</title>
         <link rel="stylesheet" type="text/css" href="../style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="project.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="icon" href="../img/s.png">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="../scripts.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="../latex/LaTeXMathML.js"></script>
         <link rel="stylesheet" type="text/css" href="../latex/LaTeXMathML.standardarticle.css"/> 
     </head>
     <body>
-        <div class="topnav" id="myTopnav">
-            <a href="../index.html">Spencer Perkins</a>
-            <a href="../experience.html">Experience</a>
-            <a href="../projects.html" class="sudoActive">Projects</a>
-            <a href="../explore.html">Explore</a>
-            <a href="javascript:void(0);" class="icon" onclick="toggleMenu(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-            </a>
-        </div>
-
-        <div class="main project">
+        <div class="project">
             <div class="projectTitle">Pendulum Harmonograph Art</div>
             <img class="projectPhoto" src="../img/pendulumHarmonograph.jpeg"/>  
-            <div class="projectDetails">
+            <div class="projectContent">
                 <div class="projectSection">
                     <div class="sectionTitle">
                         Problem
                     </div>
-                    <div class="sectionDetails">
-                        I have always been facinated by the art produced by a harmonograph, so I wanted to analyze how it works, and how to make it myself!
+                    <div class="sectionContent">
+                        Harmonograph use physics to produce fasincating art, so I wanted to analyze how it works, and how to make it myself!
 
                         <p style="font-size: 16px">
-                            Disclamer: If you are visiting here because you want to see the cool art and don't care about the physics (which is a shame, the physics is cool)
-                            then the simulation can be found <a href="../pendulumSimulation/pendulum.html">here</a> and is also linked in the discussion at the bottom.
+                            Disclamer: If you are visiting here because you want to see the cool simulation and don't care about the physics (which is a shame, the physics is cool)
+                            then you can jump over to <a href="../pendulumSimulation/pendulum.html">the simulation</a>.
                         </p>
                     </div>
                 </div>
@@ -46,14 +33,14 @@
                     <div class="sectionTitle">
                         Model
                     </div>
-                    <div class="sectionDetails">
+                    <div class="sectionContent">
                         <div class="LaTeX">
                             I started with a 3D pendulum system, the pendulum has massless string of length $l_1$ tied to the ceiling and a point mass $m_1$on the other end as shown in Figure 1.
                             This is a pretty good appriximation if you imagine a small bottle of ink held by a string tied to a fixed point. The idea is that there is a slow leak in the ink
                             that is falling onto plane $A$ below, which is parallel to the xy plane. Plane $A$ is where the magic occurs, you could imagine $A$ is a piece of paper. I will refer to this pendulum system as "System 1".
                             
                             <figure>
-                                <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure1.jpeg"/>  
+                                <img class="projectPhoto" src="../img/pendulumHarmonograph/figure1.jpeg"/>  
                                 <figcaption>Figure 1: System 1, 3D Pendulum System with ink bottle on the end</figcaption>
                             </figure>
 
@@ -70,14 +57,14 @@
                             </p>    
 
                             <figure>
-                                <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure2.jpeg"/>  
+                                <img class="projectPhoto" src="../img/pendulumHarmonograph/figure2.jpeg"/>  
                                 <figcaption>Figure 2: System 2, 3D pendulum system moving $A$</figcaption>
                             </figure>
 
                             The full system can be seen in figure 3. This system is how I was able to produce the interesting image at the top of the article.
 
                             <figure>
-                                <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure3.jpeg"/>  
+                                <img class="projectPhoto" src="../img/pendulumHarmonograph/figure3.jpeg"/>  
                                 <figcaption>Figure 3: Full harmonograph system</figcaption>
                             </figure>
                         </div>
@@ -88,20 +75,20 @@
                     <div class="sectionTitle">
                         Solution
                     </div>
-                    <div class="sectionDetails">
+                    <div class="sectionContent">
                         <div class="LaTeX">
                             I will solve each system independently, and as it turns out I will only need to solve System 1 as the result will generalize for System 2.
 
                             <p>
                             Start by noting there are 2 degrees of freedom ($s=2$), I will pick my genrealized coordinates to be $\mathbf{q}=(\theta, \phi)$, note that because the results from System 1 will be the same as that from System 2 I will not use the subscripted angles.
                             Writing the cartesion position in terms of $\mathbf{q}$ we have (where the dot above implies the time derivative)
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn1.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn1.gif">
                             The potential energy is found to be $U = -mglcos(\theta)$, thus we find the Lagrangian to be
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn2.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn2.gif">
                             The Euler-Lagrange (EL) equations yeild
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn3.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn3.gif">
                             Noting that the Lagrangian is indepent of $t$ and $\phi$ we find that energy and angular momentum in the $\phi$ direction are conserved
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn4.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn4.gif">
                             In the simulation I solve this system of ODE's numerically, finding $\theta(t)$ and $\phi(t)$. 
                             From here $(x,y,z)$ can easily be found using the first 3 equations in the solution section. 
                             </p>
@@ -110,13 +97,13 @@
                             System 2 will be accounted for by the translation of plane $A$ in the xy-direction. 
                             Here the $z$ translation doesn't need to be considered as I am taking the position of the falling ink to be the projection onto the $A$ plane (neglecting the velocity of the ink leaving the bottle).
                             The translation of point $P$ (the origin of plane $A$) in the cordinate system for System 1 (and System 2) is
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn5.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn5.gif">
                             By applying this transformation to the position of $m_1$ in from System 1 we can find the position where the ink will fall on plane $A$ which has $P$ as its origin.
                             Thus the position of the ink drop on plane $A$ relative to origin $P$ will be
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn6.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn6.gif">
                             Where $x_p$ and $y_p$ are defined as drawn in figure 4.
                             <figure>
-                                <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure4.jpeg"/>  
+                                <img class="projectPhoto" src="../img/pendulumHarmonograph/figure4.jpeg"/>  
                                 <figcaption>Figure 4: Green ink droplet's on plane A</figcaption>
                             </figure>
                             This is the equation that will gouvern the pattern drawn on $A$ for the complete system, which is plotted in the simulation.
@@ -124,17 +111,17 @@
                             <p>
                             To solve this problem the first step is to find the numerical solutions to the ODE's from the EL equations.
                             From the conservation of angular momentum in $\phi$ we can note that 
-                            <img class="equationInline" src="../img/projects/pendulumHarmonograph/eqn7.gif">
+                            <img class="equationInline" src="../img/pendulumHarmonograph/eqn7.gif">
                             which allows decoupling      of the ODE's to give a single ODE
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn8.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn8.gif">
                             We can then discretize this ODE to give
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn9.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn9.gif">
                             where $\Delta{t}$ is a small time step. So if we know two initial positions, we can find all further positions.
                             $\theta_0 = \theta(0)$ will be given as an inital condition, which just leaves the task to find $\theta_1 = \theta(\Deltat)$.
                             This can be found by taking the 2nd order taylor expansion about $\theta_{0}$
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn10.gif">
-                            Manipulating <img class="equationInline" src="../img/projects/pendulumHarmonograph/eqn7.gif"> and discritizing gives
-                            <img class="equation" src="../img/projects/pendulumHarmonograph/eqn11.gif">
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn10.gif">
+                            Manipulating <img class="equationInline" src="../img/pendulumHarmonograph/eqn7.gif"> and discritizing gives
+                            <img class="equation" src="../img/pendulumHarmonograph/eqn11.gif">
                             This means we now have the equations that will allows a numerical solution. Notice that in these equations there is 
                             singularity about $\theta = 0$, this occurs due to a centrifugal barrier and is a product of solving these in spherical coordinates. 
                             There is more complex numerical methods to elimate this singularity but they are beyond the scope of this project. 
@@ -142,12 +129,12 @@
                             </p>
                             <p>
                                 To solve these equations we will need to be provided 4 initial conditions
-                                <img class="equationInline" src="../img/projects/pendulumHarmonograph/eqn12.gif">.
+                                <img class="equationInline" src="../img/pendulumHarmonograph/eqn12.gif">.
                                 I want to demonstrate how the plots look in 3D and the projection onto a 2D surface which would be the art produced if A is held fixed.
                                 To do so I implemented this algorithm and plotted for a few different initial conditions in Matlab, results can be seen in Figure 5. You can find the code on my <a href="https://github.com/spennyp/spennyp.github.io/tree/master/pendulumSimulation">github</a>
                                 <figure>
-                                    <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure5.jpeg"/>  
-                                    <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure6.jpeg"/>  
+                                    <img class="projectPhoto" src="../img/pendulumHarmonograph/figure5.jpeg"/>  
+                                    <img class="projectPhoto" src="../img/pendulumHarmonograph/figure6.jpeg"/>  
                                     <figcaption>Figure 5: Trajectory of the mass, and projection onto fixed plane $A$</figcaption>
                                 </figure>
                             </p>
@@ -159,11 +146,11 @@
                             <p>
                             Below are a few of the nice results that I produced
                             <figure>
-                                <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure7.jpeg"/>  
+                                <img class="projectPhoto" src="../img/pendulumHarmonograph/figure7.jpeg"/>  
                                 <figcaption>Figure 6: Snapshot of a particular solution</figcaption>
                             </figure>
                             <figure>
-                                <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure8.jpeg"/>  
+                                <img class="projectPhoto" src="../img/pendulumHarmonograph/figure8.jpeg"/>  
                                 <figcaption>Figure 7: Another snapshot of a particular solution</figcaption>
                             </figure>
                             </p>
@@ -174,7 +161,7 @@
                     <div class="sectionTitle">
                         Simulation  
                     </div>
-                    <div class="sectionDetails">
+                    <div class="sectionContent">
                         <p>
                         Once I proved the concept worked in Matlab, I moved it over to a javascript appliation to be run in the browser so 
                         it is interactive and easily accessible. I wanted a realivily clean and intuitive interface so I cut back the user specified 
@@ -184,7 +171,7 @@
                         </p>
 
                         <figure>
-                            <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/simulation.jpeg"/>  
+                            <img class="projectPhoto" src="../img/pendulumHarmonograph/simulation.jpeg"/>  
                             <figcaption>Figure 8: Screenshot of the simulation</figcaption>
                         </figure>
 
@@ -217,7 +204,7 @@
                     <div class="sectionTitle">
                         Discussion  
                     </div>
-                    <div class="sectionDetails">
+                    <div class="sectionContent">
                         <p>
                         When I first set out to solve this problem I was not sure if I was actually going to be able to produce a harmonograph, but was pleasently surprised! 
                         </p>
@@ -231,7 +218,7 @@
                         </p>
 
                         <figure>
-                            <img class="projectPhoto" src="../img/projects/pendulumHarmonograph/figure9.jpeg"/>  
+                            <img class="projectPhoto" src="../img/pendulumHarmonograph/figure9.jpeg"/>  
                             <figcaption>Figure 9: Not so satifying "Art"</figcaption>
                         </figure>
 
@@ -240,6 +227,9 @@
                     </div>
                 </div>
             </div>
+
+            <a href="../projects/pendulumSimulation/pendulum.html" id="projectLink">The Simulation</a>
+            <a href="https://www.spencerperkins.me" id="myWebsiteIcon">[S]</a>
         </div>
    </body>
 </html>

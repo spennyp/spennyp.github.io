@@ -1,0 +1,702 @@
+/* General configuration */
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden
+}
+
+body {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(77, 77, 77);
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+ul {
+    margin-top: 5px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.equation {
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topnav {
+    background-color: rgb(255, 255, 255);
+    color: gray;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: gray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: rgb(201, 201, 201);
+    border-bottom: 5px solid rgb(201, 201, 201);
+    color: black;
+}
+
+.topnav a.active {
+    border-bottom: 5px solid rgb(168, 35, 48);/*Tesla red*/
+    color: black;
+}
+
+
+.topnav a.sudoActive {
+    border-bottom: 5px solid rgb(201, 201, 201);
+}
+
+.main {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* Make the 100% reference outside box */
+}
+
+a:hover {
+    background-color: rgb(201, 201, 201);
+}
+
+.comingSoon {
+    margin-top: 50px;
+}
+
+
+/* Index Background */
+#vantajs {
+    height: 100%;
+}
+
+#indexBody {
+    overflow-y: hidden;
+}
+
+
+/* Geneic Card */
+.card {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px 20px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    font-family: 'Roboto', sans-serif;
+    color: rgb(77, 77, 77);
+}
+
+a.card {
+    text-decoration: none;
+}
+
+.cardMediaBox {
+    box-sizing: border-box;
+    overflow: auto;
+    flex: 1 0 0px;
+}
+
+.cardInfoColumn { /* This is needed to make mediaBox and info fill 100% of card that is height: auto */
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.cardInfo {
+    box-sizing: border-box;
+    flex: 1 0 0px;
+}
+
+.cardMedia {
+    box-sizing: border-box;
+    display: block;
+    margin-right: 10px;
+    margin-left: auto;
+    text-align: right;
+    height: 100%;
+    max-width: 100%;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.cardHeader {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: 20%;
+}
+
+.cardSubtitle {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 15%;
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.cardDescription {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: 65%;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.cardTitle {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cardDate {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.cardDate::before {
+    content: "(";
+}
+
+.cardDate::after {
+    content: ")";
+}
+
+
+/* Index Card Modifications */
+#profileCard {
+    border-bottom: none;
+    padding-top: 40px;
+}
+
+#profileCardInfoColumn {
+    width: 65%;
+    padding: 40px 0 30px 0;
+}
+
+#profileCardDescriptionPoints {
+    padding-left: 0;
+}
+
+a:hover.profileLink {
+    background-color: rgba(255, 0, 0, 0);
+}
+
+#profileCardMedia {
+    max-width: none;
+    max-height: none;
+}
+
+
+/* Project Card Modifications */
+.projectCardTags {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 15%;
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+}
+
+.projectCardTags::before {
+    content: "Tags: ";
+}
+
+
+/* Experience Card Modifications */
+.experienceCardDescriptionPoints {
+    margin: 2px 0;
+}
+
+
+/* Projects page */
+a.projLink {
+    color: rgb(168, 35, 48);
+    text-decoration: none;
+}
+
+.a:visited.projLink {
+    color: rgb(168, 35, 48);
+    text-decoration: none;
+}
+
+a:hover.projLink {
+    color: gray;
+    text-decoration: none;
+}
+
+#socialLinks {
+    margin-top: 20px;
+}
+
+
+/* Toggle Arrow */
+.arrow-down {
+    text-align: center;
+    width: 90px;
+    height: 50px;
+    position: relative;
+    display: none;
+    margin: auto;
+}
+
+.arrow-down:before, .arrow-down:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: gray;
+    position: absolute;
+    top: 30px;
+    transition: transform .3s;
+}
+
+.arrow-down:before {
+    right: 41px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transform: rotate(30deg);
+}
+
+.arrow-down:after {
+    right: -1px;
+    transform: rotate(-30deg);
+}
+
+.arrow-down.active:before {
+    transform: rotate(-30deg);
+}
+
+.arrow-down.active:after {
+    transform: rotate(30deg);
+}
+
+
+/* Individualy Project Pages */
+.project {
+    box-sizing: border-box;
+    display: block;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    height: auto;
+    /* padding: 20px 200px 0 200px; */
+}
+
+.projectTitle {
+    display: block;
+    width: 100%;
+    font-size: 40px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.projectPhoto {
+    display: inline-block;
+    width: 100%;
+    height: 80%;
+}
+
+.projectDetails {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 20px;
+    height: auto;
+    font-size: 21px;
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.sectionTitle {
+    width: 100%;
+    font-size: 30px;
+    text-align: left;
+}
+
+.sectionDetails {
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px 0 40px 0;
+}
+
+.codeBlock {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: #eee;
+    border: 1px solid #999;
+    padding: 0 20px 0 20px;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    text-align: left;
+}
+
+@media screen and (max-width: 1150px) {
+    .arrow-down {
+        display: block;
+    }
+
+    .cardDescription {
+        display: none;
+    }
+
+    .projectCardTags {
+        display: none;
+    }
+
+    .card, .cardInfoColumn, .cardInfo, .cardHeader, .cardTitle, .cardDate, .cardSubtitle {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cardMediaBox {
+        width: 100%;
+        height: 150px;
+    }
+
+    .cardMedia {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cardDescription {
+        padding: 10px 20%;
+    }
+
+    #profileCardDescription {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    #profileCardMediaBox {
+        height: 300px;
+    }
+
+    #profileCardInfoColumn {
+        padding-top: 0;
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 1150px) {
+    /* This overrides the jqery display: none property */
+    .cardDescription {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    /* Top Nav */
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 25px;
+        height: 2px;
+        background-color: #333;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-2px, -3px);
+        transform: rotate(45deg) translate(-2px, -3px);
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+        margin-top: -4px;
+    }
+
+    .topnav .icon:hover {
+        border-bottom: 0px solid rgb(201, 201, 201);
+        background-color: none;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .topnav.responsive a.active {
+        background-color: rgb(168, 35, 48)
+    }
+
+    .topnav a {
+        font-size: 15px;
+    }
+
+    .topnav a:hover {
+        background-color: rgb(201, 201, 201);
+        color: black;
+    }
+
+    #myTopnav {
+        border-bottom: 2px solid gray;
+    }
+
+    #profileCardMediaBox {
+        height: 35%;
+        min-height: 100px;
+    }
+
+    .cardTitle {
+        font-size: 20px;
+    }
+
+    .cardSubtitle {
+        font-size: 16px;
+    }
+
+    .cardDescription {
+        font-size: 14px;
+    }
+
+    #github, #mail, #linkedin {	
+        width: 30px;	
+    }
+
+    .cardDescription {
+        padding: 10px;
+    }
+
+    .project {
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 285px) {
+
+}
+
+
+/* MAP STYLES */
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.jobMarker {
+    background-image: url('img/map/jobMarker.svg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.travelMarker {
+    background-image: url('img/map/travelMarker.svg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.moreInfoButton {
+    width: 80%;
+    color: white;
+    border-radius: 10px;
+}
+
+.jobMoreInfoButton {
+    background-color: rgb(168, 35, 48);
+}
+
+.travelMoreInfoButton {
+    background-color: rgb(75, 136, 255);
+}
+
+/* .modal {
+    width: 500px !important;
+} */
+
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-body {
+    height: 500px;
+}
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
+.legend {
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    width: 120px;
+}
+
+.legendEntry {
+    /* padding-bottom: 10px; */
+    width: 100%;
+    height: 30px;
+}
+
+#bottomLegendEntry {
+    padding-bottom: 0;
+}
+
+.legendInfo {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: 74px;
+}
+
+.checkboxContainerDiv {
+    display: inline-block;
+    width: 26px;
+    height: 100%;
+}
+
+.checkboxContainer {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+    padding-left: 3px;
+    padding-top: 3px;
+}
+
+/* Hide the browser's default checkbox */
+.checkboxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxContainer input:checked ~ .checkmark {
+    background-color: rgb(25, 26, 26);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxContainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxContainer .checkmark:after {
+    left: 8px;
+    top: 5px;
+    width: 5px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
