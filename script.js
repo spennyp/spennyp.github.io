@@ -75,6 +75,18 @@ $(document).ready(function(){
 });
 
 
+window.onload =
+window.onresize = function() {
+    var top = document.getElementById("experienceTitle").getBoundingClientRect().bottom
+    var footerTop = document.getElementById("aboutFooter").getBoundingClientRect().y
+    var bottom = footerTop != 0 ? footerTop : window.innerHeight
+    var height = bottom - top
+    console.log(top)
+    console.log(bottom)
+    document.getElementById("experienceBox").style.height = height + "px"
+
+} 
+
 
 
 
