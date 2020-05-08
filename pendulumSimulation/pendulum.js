@@ -19,7 +19,8 @@ var phiDot2IC = 4 * granularity;
 // System parameters
 var canvasWidth = window.innerWidth; // may want to set based on screen size
 var canvasHeight = window.innerHeight;
-var strokeColor = "rgb(168, 35, 48)";
+var strokeColor = "rgb(229, 86, 85, 0.3)";
+var backgroundColor = "#55E59D"
 var l1 = Math.min(window.innerHeight / 4 - 10, window.innerWidth / 4 - 10)
 var l2 = Math.min(window.innerHeight / 4 - 10, window.innerWidth / 4 - 10)
 
@@ -59,6 +60,7 @@ var planeA = {
     start : function() {
         this.canvas.width = canvasWidth;
         this.canvas.height = canvasHeight;
+        this.canvas.style.backgroundColor = backgroundColor
         this.context = this.canvas.getContext("2d");
         drawGraph();
     },

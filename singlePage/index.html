@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spencer Perkins</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- <link rel="icon" href="img/s.png"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <script src="script.js"></script>
+
+    </head>
+    <body>
+        <div id="mainPage">
+            <div class="leftColumn">
+                <div id="header">
+                    <div id="topHeader">
+                        <div id="name">Spencer Perkins</div>
+                        <div id="about" onclick="openAbout()">About</div>
+                    </div>
+
+                    <div id="bottomHeader">
+                        Engineering Physics
+                    </div>
+
+                </div>
+                <ul id="projectList">
+                    <li class="selectedProject">Pendulum Harmonograph Art</li>
+                    <li>Loan Application</li>
+                    <li>Homepage Dashboard</li>
+                    <li>Steering Wheel</li>
+                    <li>CAN Bus Communication</li>
+                    <li>Hydrogen Accoustic Sensor</li>
+                    <li>Interactive Wall</li>
+                    <li>Autonomous Robot Competition</li>
+                </ul>
+                <div id="footer">
+                    <ul id="links">
+                        <li><a href="https://github.com/spennyp" target=_>Github</a></li>
+                        <li><a href="https://www.linkedin.com/in/spencerjperkins/" target=_>LinkedIn</a></li>
+                        <li><a href="mailto:hello@spencerperkins.me">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul id="rightColumn" onscroll="updateProjectSelection()">
+                <li><img src="img/pendulumHarmonograph.jpeg"></li>
+                <li><img src="img/loan.png"></li>
+                <li><img src="img/dashboard.jpg"></li>
+                <li><img src="img/steeringWheel.png"></li>
+                <li><img src="img/CANbus.svg"></li>
+                <li><img src="img/HFC.svg"></li>
+                <li><img src="img/interactiveWall.png"></li>
+                <li><img src="img/robot.jpeg"></li>
+            </ul>
+        </div>
+
+
+        <div id="aboutPage">
+            <div id="closeButton" onclick="closeAbout()">Close</div>
+            <div id="aboutBody">
+                <div id="aboutHeader">Hello, I'm Spencer</div>
+                <div id="aboutInfo">
+                    I'm a 4th year engineering physics student at UBC. <br>
+                    I strive to use my skills in engineering and technology to make a positive impact in the world. <br><br>
+                    Let's grab coffee: hello@spencerperkins.me
+                </div>
+                <hr>
+                
+                <div id="experienceTitle">Experience</div>
+                <div id="experienceBox"> 
+                    <ul id="experienceList">
+                        <li class="selectedJob">NVIDIA</li>
+                        <li>Tesla</li>
+                        <li>Supermileage</li>
+                        <li>BC Hydro</li>
+                        <li>Logic&Form</li>
+                        <li>Cutting Edge</li>
+                    </ul>
+
+                    <ul id="experienceDetails">
+                        <!-- NVIDIA -->
+                        <li class="jobDetials">
+                            <div class="jobTitle">Hardware Robotics Engineering Intern @ <a href="https://www.nvidia.com/en-us/" target=_>NVIDIA</a></div>
+                            <div class="jobTeam">Issac SDK</div>
+                            <div class="jobDate">May - Sept 2020</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Implemented peripherals using communication protocols such as CAN, i2c, SPI, RS-232/485 
+                                </li>
+                                <li>
+                                    TODO: Add more
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Tesla -->
+                        <li class="jobDetials hidden">
+                            <div class="jobTitle">Production Engineering Intern @ <a href="https://www.tesla.com" target=_>Tesla</a></div>
+                            <div class="jobTeam">Model 3 Battery Pack</div>
+                            <div class="jobDate">Sept - Dec 2019</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Implemented a fault log datatype with Python, SQL, and Tableau in to scan the 
+                                    state of the production line (Ignition) when a fault occurs that allows root casing 
+                                    faults saving Tesla $2.4M per year in downtime
+                                </li>
+                                <li>
+                                    Implemented a fleet of Raspberry Pi's with computer vision to replace all the 
+                                    cameras on the line for foreign object and non-conformance detection resulting 
+                                    in a saving of $3.1M per year
+                                </li>
+                                <li>
+                                    Created Kubernetes Kubeless functions and Kubernetes API's that automate tasks on the production line with python and mySQL
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Supermileage -->
+                        <li class="jobDetials hidden">
+                            <div class="jobTitle">Electrical Lead @ <a href="https://www.supermileage.ca" target=_>UBC Supermileage</a></div>
+                            <div class="jobDate">2016 - Present</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Redeisgned the steeting wheel in our Electric Urban Concept vehicle, including mechanical, electrcial and software
+                                </li>
+                                <li>
+                                    Implemented a CAN bus microcontroller communication system in C++ in the Electric Urban Concept vehicle
+                                </li>
+                                <li>
+                                    Attended Shell Ecomarathon Americas 2019 where our Prototype Vehicle finished in 2nd achieving 1371 MPG
+                                </li>
+                                <li>
+                                    Redesigned our Prototype vehicle's drivetrain to move from chain to belt drive
+                                </li>
+                                <li>
+                                    Redesigned the fuel system on our Prototype Vehicle
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- BC Hydro -->
+                        <li class="jobDetials hidden">
+                            <div class="jobTitle">Electrical Engineering Intern @ <a href="https://www.bchydro.com/index.html" target=_>BC Hydro</a></div>
+                            <div class="jobTeam">Power Distribution Planning</div>
+                            <div class="jobDate">May - Sept 2019</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Developed an in house substation load forecast with Tableau, SQL and batch scripts saving BC Hydro tens of thousands of dollars
+                                </li>
+                                <li>
+                                    Developed an in house substation load forecast with Tableau, SQL and batch scripts saving BC Hydro tens of thousands of dollars
+                                </li>
+                                <li>
+                                    Performed duct bank thermal analysis to determine maximum allowable currents
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Logic&From -->
+                        <li class="jobDetials hidden">
+                            <div class="jobTitle">Creative Software Engineering Intern @ <a href="http://logicandform.com" target=_>Logic&Form</a></div>
+                            <!-- <div class="jobTeam">Model 3 Battery Pack</div> -->
+                            <div class="jobDate">Jan - Sept 2018</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Agile developer in Swift for macOS, creating an interactive wall spanning 3, 100" touch screens to educate the public on the history of Indian Residential Schools in Canada
+                                </li>
+                                <li>
+                                    Worked with Raspberry Pi's in Python to send touch data from the touch screens, to the iMac running the main installation, where touches were turned into custom gestures for macOS
+                                </li>
+                                <li>
+                                    Created caching server in Javascript with node.js and postgreSQL to quickly serve media
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Cutting Edge Lawn and Landscape -->
+                        <li class="jobDetials hidden">
+                            <div class="jobTitle">Founder and Owner @ <span style="font-weight: 500">Cutting Edge Lawn and Landscape</span></div>
+                            <div class="jobDate">2013 - 2016</div>
+                            <ul class="jobTasks">
+                                <li>
+                                    Developed evaluation of tenders, estimation of expenses and cash flow for landscaping construction projects
+                                </li>
+                                <li>
+                                    Directed capital and employee allocations
+                                </li>
+                                <li>
+                                    Communicated effectively and strategically with clients
+                                </li>
+                                <li>
+                                    Achieved gross seasonal revenue of $45 000 in 3 years
+                                </li>
+                                <li>
+                                    Sold company in August 2016
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+   </body>
+</html>

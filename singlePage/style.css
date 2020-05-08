@@ -1,0 +1,259 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color:#9A9A9A;
+    background-color: white;
+    margin: 0;
+    font-size: 16;
+    font-weight: 300;
+}
+
+.leftColumn {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    float: left;
+    padding: 20px 40px 10px 40px;
+    box-sizing: border-box;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 80px;
+}
+
+#topHeader {
+    display: inline-block;
+    width: 100%;
+    color: black;
+    font-size: 22px;
+}
+
+#name {
+    display: inline-block;
+    font-weight: bold;
+    width: 60%;
+}
+
+#about {
+    display: inline-block;
+    text-align: right;
+    float: right;
+    width: 30%;
+    font-size: 18px;
+    padding-right: 20px;
+}
+
+#footer {
+    height: 30px;
+    margin-top: 80px;
+}
+
+#projectList {
+    display: block;
+    width: 80%;
+    height: calc(100% - 240px);
+    overflow-y: scroll;
+    margin: 10px auto;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#projectList li {
+    font-size:  20px;
+    padding: 12px 0;
+}
+
+#links {
+    padding: 0;
+    font-size: 0;
+}
+
+#links li {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+#rightColumn { 
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    float: right;
+    background-color: #F2F2F2;
+    list-style: none;
+    margin: 0
+}
+
+a {
+    color: #0667EB;
+}
+
+#rightColumn li {
+    display: block;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#rightColumn li img {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#mainPage {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#aboutPage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    color: white;
+    box-sizing: border-box;
+}
+
+#closeButton {
+    width: 100%;
+}
+
+#aboutBody {
+    box-sizing: border-box;
+    width: calc(100% - 400px);
+    height: calc(100% - 100px);
+    margin: 50px 200px;
+}
+
+#aboutHeader {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+#aboutInfo {
+    padding-bottom: 50px;
+}
+
+hr {
+    height: 1px;
+    background-color: rgba(196, 196, 196, 0.6);
+    border: none;
+}
+
+#experienceTitle {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#experienceBox {
+    display: block;
+    width: 100%;
+    height: calc(100% - 250px);
+}
+
+#experienceList {
+    display: inline-block;
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0 50px;
+    width: 200px;
+    margin: 15px 0;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#experienceList li {
+    width: 100%;
+    padding: 10px 0;
+    color: #9A9A9A;
+}
+
+#experienceDetails {
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(100% - 200px);
+    float: right;
+    border-left: 1px solid;
+    border-color: rgba(196, 196, 196, 0.6);
+    padding-left: 20px;
+    margin-top: calc(15px + 10px);
+    max-height: 100%;
+    overflow-y: scroll;
+    list-style: none;
+}
+
+.selectedJob {
+    color: white !important;
+    font-weight: bold;
+}
+
+.jobTitle {
+    font-size: 20px;
+    padding-bottom: 10px
+}
+
+.jobTitle a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.jobTeam {
+    padding-bottom: 10px;
+}
+
+.jobDate {
+    font-size: 14px;
+}
+
+.jobTasks {
+    padding-top: 15px;
+    list-style-type: disc;
+}
+
+.jobTasks li {
+    padding-bottom: 10px;
+
+}
+
+.selectedProject {
+    color: black;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
