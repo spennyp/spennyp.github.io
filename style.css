@@ -221,17 +221,17 @@ hr {
     display: inline-block;
     box-sizing: border-box;
     list-style: none;
-    padding: 15px 50px;
+    padding: 0 50px 15px 50px;
     width: 225px;
-    margin: 0;
-    height: 100%;
+    margin: 25px 0 0 0;
+    height: calc(100% - 25px);
     overflow-y: scroll;
     cursor: pointer;
 }
 
 #experienceList li {
     width: 100%;
-    padding: 10px 0;
+    padding: 0 0 20px 0;
     color: #9A9A9A;
 }
 
@@ -242,9 +242,9 @@ hr {
     float: right;
     border-left: 1px solid;
     border-color: rgba(196, 196, 196, 0.6);
-    padding: 25px 0 15px 20px;
-    margin: 0;
-    max-height: 100%;
+    padding: 0 0 15px 20px;
+    margin: 25px 0 0 0 ;
+    max-height: calc(100% - 25px);
     overflow-y: scroll;
     list-style: none;
 }
@@ -351,9 +351,35 @@ figcaption {
     margin-left: -1px;
 }
 
+.material-icons.md-24 { 
+    font-size: 24px; 
+}
+
+.material-icons.md-28 { 
+    font-size: 28px; 
+}
+
 #aboutFooter {
     display: none; 
 }
+
+.projectMobileTitle {
+    display: none;
+}
+
+.mobileCompanyName {
+    display: none;
+}
+
+.mobileExpand {
+    display: none ; /*Can't get this to work otherwise*/
+    transition: all 0.3s ease;
+}
+
+.rotated {
+    transform: rotate(-180deg);
+}
+
 
 /* Tablet */
 @media screen and (max-width: 1024px) {
@@ -421,6 +447,12 @@ figcaption {
 
     .projectOverview {
         font-size: 12px;
+        top: 75%;
+    }
+
+    .projectMobileTitle {
+        display: block;
+        font-size: 16px;
     }
 
     .material-icons.md-18 { 
@@ -480,8 +512,9 @@ figcaption {
     }
 
     #experienceList {
-        padding: 15px 0 15px 20px;
-        width: 130px;
+        /* padding: 0 0 15px 20px;
+        width: 130px; */
+        display: none;
     }
 
     #experienceList li {
@@ -489,24 +522,28 @@ figcaption {
     }
 
     #experienceDetails {
-        width: calc(100% - 130px);
+        /* width: calc(100% - 130px); */
+        width: 100%;
         padding-left: 5px;
+        border: none;
     }
 
-    .jobDate {
-        font-size: 10px;
+    /* Turn off hidden */
+    .hidden { 
+        display: block;
     }
 
-    .jobTitle {
-        font-size: 14px;
-    }
-
-    .jobTitle a {
-        display: none;
+    #experienceDetails > li {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: rgba(100, 100, 100, 0.6);
+        border-radius: 10px;
+        position: relative;
     }
 
     .jobTeam {
-        font-size: 12px;
+        font-size: 14px;
+        display: none;
     }
 
     .jobTasks {
@@ -514,10 +551,61 @@ figcaption {
         /* display: none; */
     }
 
+    .jobTitle a {
+        display: none;
+    }
+
     .at {
         display: none;
     }
+
+    .jobTasks {
+        display: none
+    }
+
+    .mobileCompanyName {
+        display: inline-block;
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+
+    .jobTitle {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .jobDate {
+        display: inline-block;
+        float: right;
+        text-align: right;
+        padding: 6px 45px 0 0;
+        font-size: 10px;
+        box-sizing: border-box;
+    }
+
+    .mobileExpand {
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 22px;
+    }
+
+    #cuttingEdge {
+        display: none;
+    }
 }
+
+@media screen and (min-width: 700px) {
+    /* This overrides the jqery display: none property which stops from showing after going to mobile screen size */
+    .jobTeam {
+        display: block !important;
+    }
+
+    .jobTasks {
+        display: block !important;
+    }
+}
+
 
 
 

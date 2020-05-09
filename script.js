@@ -29,7 +29,6 @@ function closeAbout() {
 
 $(document).ready(function(){
     $("#experienceList li").click(function() {
-
         // Set highlight
         $("#experienceList li").removeClass("selectedJob")
         $(this).addClass("selectedJob")
@@ -37,11 +36,28 @@ $(document).ready(function(){
         // Show info for selected
         $("#experienceDetails > li").addClass("hidden")
         var index = $(this).prevAll().length
-        console.log(index)
-
-        console.log($($("#experienceDetails > li")[index]).removeClass("hidden"))
+        $($("#experienceDetails > li")[index]).removeClass("hidden")
     });
 });
+
+// Job on mobile arrow animation
+$(document).ready(function(){
+    $(".mobileExpand").click(function(){
+        var jobDetails = $($(this).parent()[0]).find(".jobTasks")
+        var jobTeam = $($(this).parent()[0]).find(".jobTeam")
+        if (jobDetails.css("display") == "none") {
+            $(jobDetails).slideDown()
+            $(jobTeam).slideDown()
+            $(this).addClass("rotated")
+        } else {
+            $(jobDetails).slideUp()
+            $(jobTeam).slideUp()
+            $(this).removeClass("rotated")
+        }
+    });
+});
+
+
 
 
 // Project list Animations
@@ -84,7 +100,6 @@ window.onresize = function() {
     console.log(top)
     console.log(bottom)
     document.getElementById("experienceBox").style.height = height + "px"
-
 } 
 
 
