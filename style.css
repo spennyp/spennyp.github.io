@@ -588,6 +588,7 @@ figcaption {
         position: absolute;
         right: 15px;
         top: 22px;
+        cursor: pointer;
     }
 
     #cuttingEdge {
