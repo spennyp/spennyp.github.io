@@ -45,14 +45,15 @@ $(document).ready(function(){
     $(".mobileExpand").click(function(){
         var jobDetails = $($(this).parent()[0]).find(".jobTasks")
         var jobTeam = $($(this).parent()[0]).find(".jobTeam")
+        var mobileExpandButton = $(this).find(".mobileExpandButton")
         if (jobDetails.css("display") == "none") {
             $(jobDetails).slideDown()
             $(jobTeam).slideDown()
-            $(this).addClass("rotated")
+            $(mobileExpandButton).addClass("rotated")
         } else {
             $(jobDetails).slideUp()
             $(jobTeam).slideUp()
-            $(this).removeClass("rotated")
+            $(mobileExpandButton).removeClass("rotated")
         }
     });
 });
@@ -62,6 +63,10 @@ $(document).ready(function(){
 
 // Project list Animations
 function updateProjectSelection() {
+    if (window.innerWidth < 700) { // On mobile site
+        return 
+    }
+
     var projectNum = Math.round(document.getElementById("rightColumn").scrollTop / window.innerHeight)
     if (projectNum != lastProjectNum && !$("#rightColumn").is(":animated")) {
         document.getElementById('projectList').children[lastProjectNum].classList.remove("selectedProject")
@@ -70,10 +75,10 @@ function updateProjectSelection() {
         // Update the scroll of the project list if necessairy
         var listItemHeight = document.getElementById('projectList').children[0].clientHeight 
         var listScrollPosition = projectNum * listItemHeight
-        if (projectNum * listItemHeight > document.getElementById('projectList').scrollTop + document.getElementById('projectList').clientHeight) {
+        if (projectNum * listItemHeight > document.getElementById('projectList').scrollTop + document.getElementById('projectList').clientHeight - 60) {
             $("#projectList").animate({scrollTop: listScrollPosition});
         } else if (projectNum * listItemHeight < document.getElementById('projectList').scrollTop) {
-            $("#projectList").animate({scrollTop: Math.max(listScrollPosition - document.getElementById('projectList').clientHeight, 0)});
+            $("#projectList").animate({scrollTop: Math.max(listScrollPosition - document.getElementById('projectList').clientHeight - 50, 0)});
         }
         lastProjectNum = projectNum
     }
@@ -93,6 +98,10 @@ $(document).ready(function(){
 
 window.onload =
 window.onresize = function() {
+    if (window.innerWidth < 700) { // On mobile site
+        return 
+    }
+
     var top = document.getElementById("experienceTitle").getBoundingClientRect().bottom
     var footerTop = document.getElementById("aboutFooter").getBoundingClientRect().y
     var bottom = footerTop != 0 ? footerTop : window.innerHeight

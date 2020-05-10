@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     font-family: 'IBM Plex Sans', sans-serif;
-    color:#9A9A9A;
+    color:#6B6B6B;
     background-color: white;
     margin: 0;
     font-size: 16;
@@ -25,13 +25,13 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     float: left;
-    padding: 20px 40px 10px 40px;
+    padding: 20px 40px 0px 40px;
     box-sizing: border-box;
 }
 
 #header {
     width: 100%;
-    height: 50px;
+    height: 60px;
     margin-bottom: 80px;
 }
 
@@ -64,14 +64,20 @@ body {
 }
 
 #footer {
-    height: 30px;
-    margin-top: 80px;
+    height: 40px;
+    position: fixed;
+    width: 50%;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
+
 
 #projectList {
     display: block;
     width: 80%;
-    height: calc(100% - 240px);
+    height: calc(100% - 140px);
     overflow-y: scroll;
     margin: 10px auto;
     padding: 0;
@@ -89,6 +95,7 @@ body {
 #links {
     padding: 0;
     font-size: 0;
+    padding-top: 10px;
 }
 
 #links li {
@@ -147,16 +154,6 @@ a {
     width: 100%;
 }
 
-.learnMore {
-    display: block;
-    vertical-align: middle;;
-    text-decoration: none;
-    padding-top: 5px;
-    height: auto;
-    color: #0667EB;
-    vertical-align: middle;
-}
-
 #mainPage {
     display: block;
     width: 100%;
@@ -188,12 +185,13 @@ a {
     box-sizing: border-box;
     width: calc(100% - 400px);
     height: calc(100% - 100px);
-    margin: 50px 200px;
+    margin: 60px 200px;
 }
 
 #aboutHeader {
     font-size: 40px;
     padding-bottom: 20px;
+    font-weight: 400;
 }
 
 #aboutInfo {
@@ -215,6 +213,7 @@ hr {
 #experienceBox {
     display: block;
     width: 100%;
+    overflow: none;
 }
 
 #experienceList {
@@ -232,7 +231,7 @@ hr {
 #experienceList li {
     width: 100%;
     padding: 0 0 20px 0;
-    color: #9A9A9A;
+    color: #6B6B6B;
 }
 
 #experienceDetails {
@@ -272,7 +271,7 @@ hr {
 .jobTeam {
     font-size: 16px;
     padding-bottom: 10px;
-    color: #9A9A9A;
+    color: #6B6B6B;
 }
 
 .jobDate {
@@ -373,11 +372,31 @@ figcaption {
 
 .mobileExpand {
     display: none ; /*Can't get this to work otherwise*/
-    transition: all 0.3s ease;
 }
 
 .rotated {
+    padding: 0;
     transform: rotate(-180deg);
+}
+
+#projectList::-webkit-scrollbar {
+    /* width: 0px;  Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+#lastItem {
+    margin-bottom: 50px;
+}
+
+.learnMore {
+    display: block;
+    vertical-align: middle;;
+    text-decoration: none;
+    padding-top: 5px;
+    height: auto;
+    color: #0667EB;
+    padding: 10px 0;
+    width: 150px;
 }
 
 
@@ -398,8 +417,24 @@ figcaption {
         display: none;
     }
 
+    #leftColumn {
+        position: absolute;
+        top: 0; 
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 9999;
+        height: 65px;
+        backdrop-filter: saturate(180%) blur(80px);
+        -webkit-backdrop-filter: saturate(80%) blur(40px); 
+    }
+
     #topHeader {
         width: 100%;
+        background-color: none;
+    }
+
+    #bottomHeader {
+        background-color: none;
     }
 
     #footer {
@@ -414,15 +449,16 @@ figcaption {
     #rightColumn {
         position: absolute;
         left: 0;    
-        top: 55px;
+        top: 0;
         width: 100%;
-        height: calc(100% - 55px);
+        height: 100%;
     }
 
     #rightColumn li {
         width: calc(100% - 50px);
         margin: 0 25px; 
         transform: translateY(-70%);
+        margin-bottom: 150px;
     }
 
     #header {
@@ -431,28 +467,32 @@ figcaption {
 
     #name {
         font-size: 16px;
+        font-weight: 500; 
     }
 
     #about {
-        font-size: 14px;
+        font-size: 16px;
         position: absolute;
         bottom: 0px;
         right: 0px;
-        margin-bottom: -6px;
+        margin-bottom: -12px;
     }
 
     #bottomHeader {
-        font-size:12px;
+        font-size: 14px;
     }
 
     .projectOverview {
-        font-size: 12px;
+        font-size: 16px;
         top: 75%;
     }
 
     .projectMobileTitle {
         display: block;
         font-size: 16px;
+        font-weight: 500;
+        padding-bottom: 5px;
+        color: black;
     }
 
     .material-icons.md-18 { 
@@ -464,13 +504,15 @@ figcaption {
 
     /* About */
     #aboutPage {
-        padding: 20px 20px;
+        padding: 20px 10px;
     }
 
     #aboutBody {
-        width: calc(100% - 20px);
-        height: calc(100% - 50px);
-        margin: 25px 10px;
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        margin: 40px 0 0 0;
+        overflow-y: scroll;
     }
 
     #closeButton {
@@ -485,7 +527,7 @@ figcaption {
     }
 
     #aboutInfo {
-        font-size: 15px;
+        font-size: 16px;
         padding-bottom: 5px;
     }
 
@@ -498,13 +540,21 @@ figcaption {
         position: absolute;
         bottom: 0;
         left: 0;
-        height: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 60px;
         width: 100%;
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px); 
+    }
+
+    #links {
+        padding-top: 20px;
+        background-color: none
     }
 
     #links li a {
         color: white;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     #experienceTitle {
@@ -524,8 +574,9 @@ figcaption {
     #experienceDetails {
         /* width: calc(100% - 130px); */
         width: 100%;
-        padding-left: 5px;
         border: none;
+        overflow-y: hidden;
+        padding: 0;
     }
 
     /* Turn off hidden */
@@ -536,18 +587,19 @@ figcaption {
     #experienceDetails > li {
         margin-bottom: 10px;
         padding: 10px;
-        background-color: rgba(100, 100, 100, 0.6);
+        background-color: #757575;
         border-radius: 10px;
         position: relative;
     }
 
     .jobTeam {
-        font-size: 14px;
+        font-size: 16px;
+        color: #C7C7C7;
         display: none;
     }
 
     .jobTasks {
-        font-size: 12px;
+        font-size: 16px;
         /* display: none; */
     }
 
@@ -567,10 +619,11 @@ figcaption {
         display: inline-block;
         font-size: 16px;
         padding-bottom: 5px;
+        font-weight: 450;
     }
 
     .jobTitle {
-        font-size: 14px;
+        font-size: 16px;
         width: 100%;
     }
 
@@ -578,21 +631,38 @@ figcaption {
         display: inline-block;
         float: right;
         text-align: right;
-        padding: 6px 45px 0 0;
-        font-size: 10px;
+        padding: 4px 45px 0 0;
+        font-size: 12px;
         box-sizing: border-box;
     }
 
     .mobileExpand {
         display: inline-block;
         position: absolute;
-        right: 15px;
-        top: 22px;
+        right: 0;
+        top: 0;
         cursor: pointer;
+        padding: 25px 0 15px calc(100% - 38px);
     }
+
+    .mobileExpandButton {
+        padding-right: 15px;
+        padding-left: 15px;
+        transition: all 0.3s ease;
+    }
+    
 
     #cuttingEdge {
         display: none;
+    }
+
+    #linksHorizontal {
+        margin-top: 10px;
+    }
+
+    #lastExperience {
+        display: block;
+        margin-bottom: 100px !important; /*Override*/
     }
 }
 
@@ -606,6 +676,7 @@ figcaption {
         display: block !important;
     }
 }
+
 
 
 
