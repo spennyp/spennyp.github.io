@@ -1,6 +1,6 @@
 const baseImgPath = "../../img/dashboard/" 
 
-function load() {
+window.onload = function() {
     startClock();
     refreshPage();
 }

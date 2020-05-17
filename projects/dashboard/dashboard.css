@@ -123,6 +123,10 @@ body {
     font-size: 15px;
 }
 
+#searchText:focus{
+    outline: none;
+}
+
 /* Placehodler triggers opacity change when typed */
 #searchText:placeholder-shown {
     opacity: 0.5;
