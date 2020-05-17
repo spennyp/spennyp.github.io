@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loan Tool</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    </head>
+    <body>
+        <div id="pageHeader">
+            <div id="pageTitle">Loan Calculator</div>  
+            <div id="pageDescription" class="subText">A tool to help you understand how loans works. What are the loan details?</div>
+        </div>
+
+        <div id="mainInputs">
+            <div class="inputArea" id="loanValue">
+                <div class="inputHeader subText">
+                    I want to borrow
+                </div>
+                <div class="loanDetail" data-editable>$12k</div>
+                <div class="inputFooter subText" style="opacity: 0">placeholder</div>
+                <div class="detailErrorMessage">Please enter a value between $1 and $999,999,999</div>
+            </div>
+
+            <div class="inputArea" id="loanTerm">
+                <div class="inputHeader subText">
+                    To repay in
+                </div>
+                <div class="loanDetail" data-editable>12</div>
+                <div class="inputFooter subText">years</div>
+                <div class="detailErrorMessage">Please enter a value between 1 and 30 years</div>
+            </div>
+
+            <div class="inputArea" id="interestRate">
+                <div class="inputHeader subText">
+                    At an interest rate of
+                </div>
+                <div class="loanDetail" data-editable>1.5%</div>
+                <div class="inputFooter subText">anually</div>
+                <div class="detailErrorMessage">Please enter a value between 0 and 100%</div>
+            </div>
+        </div>
+    
+        <div id="nextButtonArea">
+            <div id="nextButton">Next</div>
+        </div>
+
+        <div id="loanCalculations">
+            <div id="chartArea"><canvas id="loanChart"></canvas></div>
+            <div id="loanAnalysis">
+                <div id="monthlyPaymentTitle">Your monthly payment will be</div>
+                <div id="monthlyPaymentValue">$123.45</div>
+                <div id="monthlyPaymentInfo">To borrow <span id="totalValue">$XXXX.XX</span> over a <span id="loanTermValue">X</span> year term at an interest rate of <span id="interestRateValue">X.XX%</span></div>
+                
+                <hr>
+
+                <div class="infoItem">Loan Principal <span class="infoValue" id="loanPrincipalValue">$XXX.XX</span></div>
+                <div class="infoItem">Cost of interest <span class="infoValue" id="costOfIntrestValue">$XXX.XX</span></div>
+                <div class="infoItem">Extra payment saving <span class="infoValue" id="extraPaymentSaving">$XXX.XX</span></div>
+
+                <hr>
+
+                <div class="infoItem" id="totalInfo">Total cost <span class="infoValue" id="totalCost">$XXXX.XX</span></div>
+            </div>
+        </div>
+        
+
+
+   </body>
+</html>
