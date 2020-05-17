@@ -350,7 +350,7 @@ function updateSliderPositions() {
 }
 
 function handlePopup() {
-    var popup = document.getElementById("myPopup");
+    var popup = document.getElementById("aboutPopup");
     popup.classList.toggle("show");
 }
 

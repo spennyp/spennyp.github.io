@@ -2,13 +2,12 @@
 <html>
     <head>
         <title>Spencer Perkins</title>
-        <link rel="stylesheet" type="text/css" href="pendulum.css">
         <link rel="stylesheet" type="text/css" href="../../style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="pendulum.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="../../img/s.png">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="../../scripts.js"></script>
     </head>
     <body onload="startSimulation()">
         <canvas id="myCanvas">
@@ -16,7 +15,7 @@
         </canvas>
 
         <div class="popup" onclick="handlePopup()">i
-            <span class="popuptext" id="myPopup">
+            <div class="popuptext" id="aboutPopup">
                 <h3>Art from Spherical Pendulum Harmonograph Simulation</h3>
 
                 This simulates the trajectory of ink dropplets on a canvas produced from the motion of two Spherical
@@ -33,7 +32,7 @@
                 <a href="https://www.spencerperkins.me/projectOverviews/pendulumHarmonograph.html">The Physics</a>
                 <br>
                 <a href="https://github.com/spennyp/spennyp.github.io/tree/master/pendulumSimulation">The Code</a>
-            </span>
+            </div>
         </div>
           
         <div id="controls">
@@ -127,6 +126,7 @@
                 </div>
             </div>
         </div>
+
         <a href="https://www.spencerperkins.me" id="myWebsiteIcon">[S]</a>
    </body>
 </html>

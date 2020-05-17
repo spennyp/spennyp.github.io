@@ -310,6 +310,7 @@ function formatChartData(xVals, yVals) {
 
 function updateAnalysisData() {
     console.log("hersade")
+    document.getElementById("monthlyPaymentValue").innerText = "$" + monthlyPayment.toFixed(2)
     document.getElementById("totalValue").innerText = "$" + loanValue.toFixed(2).toString()
     document.getElementById("loanTermValue").innerText = (loanTerm / 12).toFixed(1)
     document.getElementById("interestRateValue").innerText = (interestRate * 100).toFixed(1).toString() + "%"
@@ -317,6 +318,7 @@ function updateAnalysisData() {
     document.getElementById("loanPrincipalValue").innerText = "$" + loanValue.toFixed(2).toString()
 
     var costOfIntrest = interest.reduce((a, b) => a + b, 0)
+    
     document.getElementById("costOfIntrestValue").innerText = "$" + costOfIntrest.toFixed(2).toString()
     document.getElementById("extraPaymentSaving").innerText = "$X.XX"
     document.getElementById("totalCost").innerText = "$" + (costOfIntrest + loanValue).toFixed(2).toString()
