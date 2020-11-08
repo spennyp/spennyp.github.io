@@ -12,16 +12,169 @@
     </head>
     <body>
         <div class="project">
-            <div class="projectTitle">CAN bus communication</div>
+            <div class="projectTitle">CAN Bus Steering Wheel</div>
             <img class="projectPhoto" src="../img/CANbus.svg"/>  
+
             <div class="projectSection">
+                <p>
+                Computers are ubiquitios in the modern world we live in, and in the automobile there is no exception. 
+                Modern cars are controlled by a complex interconnection of microcontrollers, and at the core of this is a communication backbone called Control Area Network (CAN). 
+                CAN enables robust and scalable peer to peer communication among microcontrollers.
+                </p>
+
                 <div class="sectionTitle">
-                    Coming Soon  
+                    Problem
+                </div> 
+                <div class="sectionContent">
+                    <img class="projectPhoto" src="../img/steering/urban.png"/>  
+
+                    <p>
+                    On UBC Supermileage student team, we build highly efficent ICE, battery electric, and hydrogen electric vehicles. 
+                    We are using SPI for communication within the vehicles, but we are facing reliability, scalability, and debugability issues.
+                    </p>
+
+                    <p>
+                    SPI is a great protocol for short distance host/periphrial communication, but it is not up to the task of what we are typing to acomplish. 
+                    Every new node (sensor or actuator) we put into the vehicle means another chip select (SS) wire must be run, and another GPIO slot must be taken up on the host device. 
+                    One can quickly see the scalability issues here. 
+                    </p>
+                    <figure>
+                        <img class="projectPhoto" src="../img/steering/SPI.png"/>  
+                        <figcaption>SPI Protocol</figcaption>
+                    </figure>
+ 
+                    <p>
+                    In terms of reliability, SPI is susptable to motor noise which can cause communications to fail. Furthermore, SPI is a wiring and debugging nightmare when there are many long distance periphrial device connections. 
+                    </p>
+                    <p>
+                    As we continue to incorportate more complex sensors, actuators and compute into our cars, it is clear another communication solution is necessairy, and moving to CAN is the obvious choice.
+                    Furthermore, I am also working on designing a new steering wheel for Supermileage ElectricUrban concept vehicle. 
+                    Thus, this was a good opertunity to incorportate these projects and implement a CAN node in the steering wheel to send driver input and recieve vehicle information which will be displayed on a screen for the driver.
+                    </p>    
+                </div>
+
+                <div class="sectionTitle">
+                    CAN Background
                 </div>
                 <div class="sectionContent">
+                    CAN is a peer to peer, asynchronous, message based, differential, scalable communication protocol. This is a mouthful so lets break that down:
+                    <ul>
+                        <li>
+                            Peer to peer: unlike SPI, there is no host or periphrial device in a CAN bus, every device has equal right to send and recieve messages onto the bus.
+                            <img class="projectPhoto" src="../img/steering/entireBus.png"/>  
+                        </li>
+                        <li>
+                            Asynchronous: This means that the data is transmitted without the use of an external clock. This is great for long distance protocols as clock skew won't hinder or break the communication.
+                        </li>
+                        <li>
+                            Message based: Data is sent in packets over the CAN bus, these packats have a specific dataframe structure to comply to the CAN standard.
+                            <img class="projectPhoto" src="../img/steering/dataFrame.png"/>  
+                            Lets break down the most important parts of the dataframe:
+                            <ul>
+                                <li>                           
+                                    11 bit identifier: This is the CAN ID, which is used to determine which message is meant for which devices. All devices on the bus have access to all the messages, but a device will only read messages with CAN ID's which it is programmed to look for. Note that if there are multiple messages waiting to go on the bus the one with the lowest CAN ID gets priority. 
+                                </li>
+                                <li>
+                                    Data: This is 8 bytes which is the content of the message that is being sent
+                                </li>
+                                <li>
+                                    Cyclic redudancy check (CRC): This is an error checking code to determine if the communication was sucessful or indicate if there were any corrupt bits. This gaurentees that the message received was the ones that was sent.
+                                </li>
+                                <li>
+                                    Differential: CAN uses differential signaling to tranmit messages over a twisted pair of wires. Meaning that each bit of data is encoded into complementary bits and each is sent over their own wire. These wires are called CAN high, and CAN low, and form the CAN bus backbone. Differential signaling is highly immune to electromagnetic interference (EMI), making CAN very reliable.
+                                    <img class="projectPhoto" src="../img/steering/differential.png"/>  
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Scalable: CAN is a flat protocol, only requiring CAN high and CAN low wires. A new node can be added to the bus without difficulty, you just need to tap into the bus lines.
+                            <img class="projectPhoto" src="../img/steering/without.png"/>  
+                        </li>
+                    </ul>
+
+                    Now that we have covered some of the basic theory, we can examine what hardware is required for implementation. 
+                    <img class="projectPhoto" src="../img/steering/node.png"/>  
+
+                    <p>
+                        Inside each node on the CAN bus there is a microcontroller, CAN controller and CAN transiever. 
+                        The microcontroller talks to the CAN controller which talks to the CAN transiever which then communicates with the CAN bus sending and recieving data from other nodes. 
+                        A bit confusing, but lukily the CAN controller is typically built into the microcontroller, which makes our lives easier. 
+                        We just need to make sure to add a transiever conveting CAN RX (recieve) and CAN TX (transmit) which are exposed on the microcontrollers GPIO to CAN high and CAN low lines of the CAN bus. 
+                        You may have also noticed that on either end of the CAN bus, there are 120 Ohm resistors briding CAN high and CAN low. The purpose of these terminal resistors is to impedence match the charasticic impedence of the transmission lines, minizing reflections which could cause signal interference.
+                    </p>  
+
+
+                    Thus to summarize, to implement the CAN bus we need:
+                    <ul>
+                        <li>
+                            2 lines, CAN high and CAN low which are termined by 120 Ohm resistors
+                        </li>
+                        <li>
+                            CAN nodes, which consist of:
+                            <ul>
+                                <li>A microcontroller that has a CAN controller</li>
+                                <li>A CAN transiever</li>
+                            </ul>
+                        </li>
+                    </ul>
+                   
+                </div>
+
+                <div class="sectionTitle">
+                    Solution
+                </div>
+                <div class="sectionContent">
+                    The goal of this project is to implement CAN into Supermileage vehicles, along with a new steering wheel which is itself a CAN node. Once this first node is implemented it can be replicated for other devices within the cars, so this will also be used as a reference design. This project requires mechanical, electical and software design.
+
+                    <p>
+                    The first thing I considered is the steering wheel requirements:
+                    <ul>
+                        <li>Typical button functions:  lights, horn, blinkers, whipers and hazards</li>
+                        <li>Dead man switch: this is a driver monitoring device which will kill the propulsion system when the drivers hands come off the steering wheel. To achieve this I decided to go with an IR sensor so this was non-intrusive to the driver</li>
+                        <li>Brake and throttle inputs</li>
+                        <li>Send all the driver input data over the CAN bus to be used by other nodes to achieve the desired functions (ex. motorcontroller recievs throttle data and sets speed accordingly)</li>
+                        <li>Screen to display speed, power and lap time information to the driver</li>
+                        <li>Quickly able to detatch: to achieve this I used a quick release system</li>
+                        <li>Easy programming and debugging, expose the usb port</li>
+                    </ul>
+                    </p>
+
+                    <p>
+                    Here is a first draft of button placement and general overview of what the wheel is going to look like. The general idea is a four component mechancial system which consists:
+                    <ol>
+                        <li>Waterjet aluminum plate which will take transfer loads from the driver twisting the wheel to the quick release</li>
+                        <li>Quick release which allows quick detatching (mechanically and electrically) of the wheel, and when attached will transfer load to the steering column</li>
+                        <li>Back 3D printed piece which will house the PCB</li>
+                        <li>Front 3D printed piece which is what forms the handles and houses the buttons</li>
+                    </ol>
+
+                    <img class="projectPhoto" src="../img/steering/original.png"/>  
+                    </p>
+
+                    <p>
+                    The mechanical and PCB design were done in parallel as they were highly interdependent. The final mecahnical CAD can be seen below.
+                    <img class="projectPhoto" src="../img/steering/CAD.png"/>  
+                    </p>
+
+                    <p>
+                    The electical design was a PCB with included an STM32L432KC mbed enabled microcontroller, as well as a CAN transiever, a TFT 2.2" display and all appropriate input connections.
+                    <img class="projectPhoto" src="../img/steering/schematic.png"/>  
+                    <img class="projectPhoto" src="../img/steering/layout.png"/>  
+
+                    </p>
+
+                    <p>
+                    The software can be found <a href="https://github.com/supermileage/mbedSteering/tree/master">here</a>, note that I used mbed libraries to implement CAN in C++ as described in the CAN Background section.
+                    </p>
+                    
+                    Here is the final prototype
+                    <img class="projectPhoto" src="../img/steering/prototype.jpg"/>  
 
                 </div>
+
             </div>
+
         </div>
 
         <a href="https://www.spencerperkins.me" id="myWebsiteIcon">[S]</a>
