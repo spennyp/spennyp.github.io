@@ -20,10 +20,10 @@
                         Problem
                     </div>
                     <div class="sectionContent">
-                        Harmonographs use physics to produce fasincating art. I wanted to analyze how they works, and how to make one myself!
+                        Harmonographs use physics to produce fascinating art. I wanted to analyze how they works, and how to make one myself!
 
                         <p style="font-size: 16px">
-                            Disclamer: If you are visiting here because you want to see the cool simulation and don't care about the physics (which is a shame, the physics is cool)
+                            Disclaimer: If you are visiting here because you want to see the cool simulation and don't care about the physics (which is a shame, the physics is cool)
                             then you can jump over to <a href="../projects/pendulumSimulation/pendulum.html" target=_>the simulation</a>.
                         </p>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="sectionContent">
                         <div class="LaTeX">
                             I started with a 3D pendulum system, the pendulum has massless string of length $l_1$ tied to the ceiling and a point mass $m_1$on the other end as shown in Figure 1.
-                            This is a pretty good appriximation if you imagine a small bottle of ink held by a string tied to a fixed point. The idea is that there is a slow leak in the ink
+                            This is a pretty good approximation if you imagine a small bottle of ink held by a string tied to a fixed point. The idea is that there is a slow leak in the ink
                             that is falling onto plane $A$ below, which is parallel to the xy plane. Plane $A$ is where the magic occurs, you could imagine $A$ is a piece of paper. I will refer to this pendulum system as "System 1".
                             
                             <figure>
@@ -50,8 +50,8 @@
                             the projection of the position of $m_1$ onto plane A to be the position where the ink falls. Air friction was also neglected.
                             </p>
                             <p>
-                            Now, this will form a pretty boring picture of concentric elipses on plane $A$.
-                            To make things more interesing I tied plane $A$ to a the top side of a second pendulum of length $l_2$ to the the pivot point $O$ with mass $m_2$ on one end, and lenght $l_3$ from $O$ to point $P$ which is the origin of plane $A$ as shown in figure 3. 
+                            Now, this will form a pretty boring picture of concentric ellipses on plane $A$.
+                            To make things more interesting I tied plane $A$ to the top side of a second pendulum of length $l_2$ to the pivot point $O$ with mass $m_2$ on one end, and length $l_3$ from $O$ to point $P$ which is the origin of plane $A$ as shown in figure 3. 
                             The mass of plane $A$ is assumed to be zero here, which you could image if it were a piece of paper. Also $A$ is assumed to be kept parallel to the xy-plane at all time, one could enforce this with a ball joint and some control.
                             I will call this pendulum system, "System 2".
                             </p>    
@@ -80,8 +80,8 @@
                             I will solve each system independently, and as it turns out I will only need to solve System 1 as the result will generalize for System 2.
 
                             <p>
-                            Start by noting there are 2 degrees of freedom ($s=2$), I will pick my genrealized coordinates to be $\mathbf{q}=(\theta, \phi)$, note that because the results from System 1 will be the same as that from System 2 I will not use the subscripted angles.
-                            Writing the cartesion position in terms of $\mathbf{q}$ we have (where the dot above implies the time derivative)
+                            Start by noting there are 2 degrees of freedom ($s=2$), I will pick my generalized coordinates to be $\mathbf{q}=(\theta, \phi)$, note that because the results from System 1 will be the same as that from System 2 I will not use the subscripted angles.
+                            Writing the cartesian position in terms of $\mathbf{q}$ we have (where the dot above implies the time derivative)
                             <img class="equation" src="../img/pendulumHarmonograph/eqn1.gif">
                             The potential energy is found to be $U = -mglcos(\theta)$, thus we find the Lagrangian to be
                             <img class="equation" src="../img/pendulumHarmonograph/eqn2.gif">
@@ -96,7 +96,7 @@
                             Now it is time to consider System 2, as mentioned the physics will behave exactly as calculated for System 1. 
                             System 2 will be accounted for by the translation of plane $A$ in the xy-direction. 
                             Here the $z$ translation doesn't need to be considered as I am taking the position of the falling ink to be the projection onto the $A$ plane (neglecting the velocity of the ink leaving the bottle).
-                            The translation of point $P$ (the origin of plane $A$) in the cordinate system for System 1 (and System 2) is
+                            The translation of point $P$ (the origin of plane $A$) in the coordinate system for System 1 (and System 2) is
                             <img class="equation" src="../img/pendulumHarmonograph/eqn5.gif">
                             By applying this transformation to the position of $m_1$ in from System 1 we can find the position where the ink will fall on plane $A$ which has $P$ as its origin.
                             Thus the position of the ink drop on plane $A$ relative to origin $P$ will be
@@ -106,7 +106,7 @@
                                 <img class="projectPhoto" src="../img/pendulumHarmonograph/figure4.jpeg"/>  
                                 <figcaption>Figure 4: Green ink droplet's on plane A</figcaption>
                             </figure>
-                            This is the equation that will gouvern the pattern drawn on $A$ for the complete system, which is plotted in the simulation.
+                            This is the equation that will govern the pattern drawn on $A$ for the complete system, which is plotted in the simulation.
                             </p>    
                             <p>
                             To solve this problem the first step is to find the numerical solutions to the ODE's from the EL equations.
@@ -117,15 +117,15 @@
                             We can then discretize this ODE to give
                             <img class="equation" src="../img/pendulumHarmonograph/eqn9.gif">
                             where $\Delta{t}$ is a small time step. So if we know two initial positions, we can find all further positions.
-                            $\theta_0 = \theta(0)$ will be given as an inital condition, which just leaves the task to find $\theta_1 = \theta(\Deltat)$.
-                            This can be found by taking the 2nd order taylor expansion about $\theta_{0}$
+                            $\theta_0 = \theta(0)$ will be given as an initial condition, which just leaves the task to find $\theta_1 = \theta(\Deltat)$.
+                            This can be found by taking the 2nd order Taylor expansion about $\theta_{0}$
                             <img class="equation" src="../img/pendulumHarmonograph/eqn10.gif">
-                            Manipulating <img class="equationInline" src="../img/pendulumHarmonograph/eqn7.gif"> and discritizing gives
+                            Manipulating <img class="equationInline" src="../img/pendulumHarmonograph/eqn7.gif"> and discretizing gives
                             <img class="equation" src="../img/pendulumHarmonograph/eqn11.gif">
                             This means we now have the equations that will allows a numerical solution. Notice that in these equations there is 
                             singularity about $\theta = 0$, this occurs due to a centrifugal barrier and is a product of solving these in spherical coordinates. 
-                            There is more complex numerical methods to elimate this singularity but they are beyond the scope of this project. 
-                            These equations will accuratly represent the system as long as $\theta$ is not to small, which is sufficent for the art I am trying to produce!
+                            There is more complex numerical methods to eliminate this singularity but they are beyond the scope of this project. 
+                            These equations will accurately represent the system as long as $\theta$ is not to small, which is sufficient for the art I am trying to produce!
                             </p>
                             <p>
                                 To solve these equations we will need to be provided 4 initial conditions
@@ -141,7 +141,7 @@
 
                             <p>
                             Now all that is left is to add in System 2, thankfully we can use the exact same discretized equations to solve for $\theta_2, \phi_2$
-                            which allow us to solve for $(p_x, p_y)$ and what we really need $(x_p, y_p)$ which are the positins of the ink within plane A.
+                            which allow us to solve for $(p_x, p_y)$ and what we really need $(x_p, y_p)$ which are the positions of the ink within plane A.
                             </p>
                             <p>
                             Below are a few of the nice results that I produced
@@ -163,9 +163,9 @@
                     </div>
                     <div class="sectionContent">
                         <p>
-                        Once I proved the concept worked in Matlab, I moved it over to a javascript appliation to be run in the browser so 
-                        it is interactive and easily accessible. I wanted a realivily clean and intuitive interface so I cut back the user specified 
-                        values to just the angular velocity initial conditions, and the drawing time. The angular velocity initial condiiton were found 
+                        Once I proved the concept worked in Matlab, I moved it over to a javascript application to be run in the browser so 
+                        it is interactive and easily accessible. I wanted a relatively clean and intuitive interface so I cut back the user specified 
+                        values to just the angular velocity initial conditions, and the drawing time. The angular velocity initial condition were found 
                         (after some testing in Matlab) to have the biggest impact on the resulting art produced. The simulation as seen in Figure 8, can be found 
                         <a href="../projects/pendulumSimulation/pendulum.html" target=_>here</a>.
                         </p>
@@ -179,17 +179,17 @@
                         Within the simulation I added 2 different animations which the user can toggle on and off:
                         <ol>
                             <li>
-                                Animation in time: This allows the user to visualize how the painting gets made from the start to end by drawing it infront of their eyes. The user can change how far along the painting is with the time slider.
+                                Animation in time: This allows the user to visualize how the painting gets made from the start to end by drawing it in front of their eyes. The user can change how far along the painting is with the time slider.
                             </li>
                             <li>
                                 Harmonics animation: This animation runs through some values of initial conditions, slowing down around some harmonics that produce
                                 a cool painting. This should give the user an intuitive feel of how they can use the simulation to create their own art. Note that the sliders are also animated in time
-                                so the user can see exactly what paramenters are being changed!
+                                so the user can see exactly what parameters are being changed!
                             </li>
                         </ol>
                         </p>
                         <p>
-                            Note that it can be a bit tricky to find nice harmonics (a lot of the time it just looks like scribbbles), but just keep chaning the initial conditions and they will appear. If all else fails run the harmonic animation and stop it when you hit something you like.
+                            Note that it can be a bit tricky to find nice harmonics (a lot of the time it just looks like scribbles), but just keep changing the initial conditions and they will appear. If all else fails run the harmonic animation and stop it when you hit something you like.
                         </p>
                         <p> 
                             Most importantly please have fun and enjoy producing cool art! This is a really great way for someone who is not typically great at art to be an
@@ -206,20 +206,20 @@
                     </div>
                     <div class="sectionContent">
                         <p>
-                        When I first set out to solve this problem I was not sure if I was actually going to be able to produce a harmonograph, but was pleasently surprised! 
+                        When I first set out to solve this problem I was not sure if I was actually going to be able to produce a harmonograph, but was pleasantly surprised! 
                         </p>
 
                         <p>
                         A traditional harmonograph drawing gets it beauty from the damping in the pendulum motion due to 
                         air resistance, where in my case it was neglected. Also in a tradition harmongraph, there are 3 pendulums; a planar pendulum in the xz plane, another in the yz plane,
-                        and the last is a spherical pendulum set in conical motion moving the canvas. This means it is easy to tune frequencies in the xz and yz direction independtly, where as in my
-                        harmonograph this isn't as easy due to the coupled ODE's that arrise. This makes it slightly more difficult to find initial conditions
-                        that produce a nice result, which means I get more of the "art" found in figure 9 than a typical haramongraph would, but all things considerd it turned out really well!
+                        and the last is a spherical pendulum set in conical motion moving the canvas. This means it is easy to tune frequencies in the xz and yz direction independently, where as in my
+                        harmonograph this isn't as easy due to the coupled ODE's that arise. This makes it slightly more difficult to find initial conditions
+                        that produce a nice result, which means I get more of the "art" found in figure 9 than a typical haramongraph would, but all things considered it turned out really well!
                         </p>
 
                         <figure>
                             <img class="projectPhoto" src="../img/pendulumHarmonograph/figure9.jpeg"/>  
-                            <figcaption>Figure 9: Not so satifying "Art"</figcaption>
+                            <figcaption>Figure 9: Not so satisfying "Art"</figcaption>
                         </figure>
 
                         I hope you enjoyed reading about this project, and if you have made it this far without opening and playing with the simulation, <a href="../projects/pendulumSimulation/pendulum.html" target=_>give it a shot!</a>
