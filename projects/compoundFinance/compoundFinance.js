@@ -100,12 +100,13 @@ function createPlot(data) {
 	let plotData = [borrow, lend]
 	let layout = {
 		title: assetName,
+		dragmode: false,
 		xaxis: {
-			fixedrange: true,
+			fixedrange: true
 		},
 		yaxis: {
-			fixedrange: true,
 			title: "% APY",	
+			fixedrange: true
 		},
 		legend: {
 			"orientation": "h",
@@ -119,7 +120,7 @@ function createPlot(data) {
 
 	}
 	const cardId = plotCard(avgBorrowRate, avgLendRate, avgSplitRate)
-	Plotly.newPlot(cardId, plotData, layout)
+	Plotly.newPlot(cardId, plotData, layout, {scrollZoom: false})
 }
 
 function plotCard(averageBorrowRate, averageLendRate, averageSplitRate) {

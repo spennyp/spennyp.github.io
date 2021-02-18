@@ -332,8 +332,8 @@ hr {
 
 #myWebsiteIcon {
     position: fixed;
-    bottom: 5px;
-    right: 5px;
+    bottom: 10px;
+    right: 20px;
     opacity: 0.5;
     font-size: 50px;
     text-decoration: none;
