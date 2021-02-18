@@ -100,7 +100,11 @@ function createPlot(data) {
 	let plotData = [borrow, lend]
 	let layout = {
 		title: assetName,
+		xaxis: {
+			fixedrange: true,
+		},
 		yaxis: {
+			fixedrange: true,
 			title: "% APY",	
 		},
 		legend: {
