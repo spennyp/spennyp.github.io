@@ -1,0 +1,96 @@
+.modebar{
+	display: none;
+}
+
+.plotEntry {
+	width: 100%;
+	height: 400px;
+}
+
+.plot {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 70%;
+	height: 100%;
+	float: left;
+}
+
+.plotSummary {
+	display: inline-block;
+	box-sizing: border-box;
+	height: 100%;
+	width: 30%;
+	float: right;	
+}
+
+.plotSummaryText {
+	font-size: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	position: relative;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#loadingSpinner:not([hidden]) {
+	display: flex;
+	height: 300px;
+	justify-content: center;
+	align-items: center;
+}
+
+#loadingSpinner::after {
+	content: "";
+	width: 80px;
+	height: 80px;
+	border: 2px solid #f3f3f3;
+	border-top: 3px solid black;
+	border-radius: 100%;
+	will-change: transform;
+	animation: spin 1s infinite linear
+}
+
+@keyframes spin {
+	 from {
+		 transform: rotate(0deg);
+	 }
+	 to {
+		 transform: rotate(360deg);
+	 }
+}
+
+@media screen and (max-width: 900px) {
+	.plotEntry {
+		height: 600px;
+	}
+
+	.plot {
+		width: 100%;	
+		height: 70%;
+	}
+
+	.plotSummary {
+		width: 100%;
+		height: 30%;
+	}
+
+	.plotSummaryText {
+		text-align: center;
+		padding-top: 30px;
+		top: 10%;
+		transform: 0;
+	}
+	
+	ul {
+		padding: 0;
+	}
+}
+
+
+
+
+
+
+
