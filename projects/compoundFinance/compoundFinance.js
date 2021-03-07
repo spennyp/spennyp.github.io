@@ -21,7 +21,7 @@ function generatePlot() {
 	const timeUTC = Math.floor((new Date()).getTime() / 1000)
 	const minTimestamp = "1456647900" // A value that doesn't give an error
 	const maxTimestamp = timeUTC 
- 	const numBuckets = 180
+ 	const numBuckets = 150
 	const baseUrl = "https://api.compound.finance/api/v2/market_history/graph?asset=" 
 	const urlTimeParam = "&min_block_timestamp=" + minTimestamp + "&max_block_timestamp=" + maxTimestamp + "&num_buckets=" + numBuckets
 
@@ -35,6 +35,11 @@ function generatePlot() {
 	Promise.all(urls.map(url => fetch(url)))
 		.then(function (responses) {
 			return Promise.all(responses.map(function (response) {
+				let statusCode = response.status
+				let error = statusCode >= 400 && statusCode <= 500 ? statusCode : null
+				if(error) {
+					throw error
+				}
 				return response.json()
 			}))
 		})
@@ -48,6 +53,8 @@ function generatePlot() {
 			document.getElementById("loadingSpinner").setAttribute("hidden", "")
 		})
 		.catch(function (error) {
+			document.getElementById("loadingSpinner").setAttribute("hidden", "")
+			document.getElementById("content").innerHTML = "<b><br>Compound API error: " + error + "<br><br></b>"
 			console.log(error)
 		})
 }
