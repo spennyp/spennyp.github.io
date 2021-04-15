@@ -36,6 +36,7 @@ async function refreshPage() {
     setTimeOfDay();
     updateBackgroundImg();
     updateWeather();
+	updateGas();
 }
 
 function setName() {
@@ -82,8 +83,8 @@ function updateBackgroundImg() {
     const collections = ""
 
     // Three different accounts for testing (keep running out of requests)
-    var clientId = "c_Mh-IYia-rRAxpMVjEXew6rcrvySdE3lVI3xnG4Vrk";
-    // var clientId = "9i_xH3I1PGmz4bSd5TjXVViHg7hq2WUz9iVEyq74POA";
+    //var clientId = "c_Mh-IYia-rRAxpMVjEXew6rcrvySdE3lVI3xnG4Vrk";
+    var clientId = "9i_xH3I1PGmz4bSd5TjXVViHg7hq2WUz9iVEyq74POA";
     // var clientId = "0K6ecqqXYKMvm7wJt8GpZ0qA6tpvbkqjNrQ8e6qKpP0";
 
     var url = "https://api.unsplash.com/photos/random/?client_id=" + clientId + "&orientation=landscape&collections=" + collections;
@@ -154,13 +155,27 @@ function getWeather(lat, long) {
             document.getElementById('weatherIcon').src = imgUrl;
         }) 
         .then(_ => { // Fade in weather, quote, and date once weather data filled
-            var fadeElements = [document.getElementById("weather"), document.getElementById("date")];
+            var fadeElements = [document.getElementById("weather"), document.getElementById("date"), document.getElementById("gas")];
             fadeIn(fadeElements);
         })
         .catch(() => {
             console.log("Error");
         });
 }  
+
+function updateGas() {
+    var url = "https://ethgasstation.info/api/ethgasAPI.json?";
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => { 
+			avgGwei = data["average"] / 10
+			document.getElementById("gasValue").innerHTML = avgGwei
+		})
+		.catch(() => {
+			console.log("Error getting gas prices")
+		});
+}
 
 // This is currently not being used
 function updateQuote() {
