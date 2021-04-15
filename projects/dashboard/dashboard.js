@@ -31,7 +31,7 @@ function formatTime(i) {
 }
 
 async function refreshPage() {
-    document.getElementById("searchText").select(); // Make the cursor select the search box on load
+//    document.getElementById("searchText").select(); // Make the cursor select the search box on load
     setName();
     setTimeOfDay();
     updateBackgroundImg();
@@ -101,20 +101,18 @@ function updateBackgroundImg() {
 }
 
 function updateWeather() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getWeather);
+    let lat = getUrlParam("lat");
+    let long = getUrlParam("long");
+	if(lat && long) {
+		getWeather(lat, long)
     } else {
-        console.log("Geolocation is not supported by this browser.");
+        console.log("Lat and long not provided in url");
     }
 }
 
-function getWeather(position) {
-    const apiKey = "a68f7eba17ff810319e0698eb480852e";
+function getWeather(lat, long) {
+    const apiKey = "a68f7eba17ff810319e0698eb480852e"; // Shouldn't really be here
     var folderImgPath = baseImgPath + "weather/" 
-
-    // Rounding to 2 decimal places for privacy reasons     
-    var lat = position.coords.latitude.toFixed(2);
-    var long = position.coords.longitude.toFixed(2);
 
     var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
 
