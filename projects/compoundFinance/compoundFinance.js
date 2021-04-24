@@ -2,6 +2,7 @@ let plotNumber = 0
 const baseImgPath = "../../img/dashboard/" 
 const coinForCode = {
 	"0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e":"BAT", 
+	"0x70e36f6bf80a52b3b46b3af8e106cc0ed743e8e4":"COMP",
 	"0x5d3a536e4d6dbd6114cc1ead35777bab948e3643":"DAI", 
 	"0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5":"ETH", 
 	"0x158079ee67fce2f58472a96584a73c7ab9ac95c1":"REP", 
@@ -10,7 +11,8 @@ const coinForCode = {
 	"0x39aa39c021dfbae8fac545936693ac917d5e7563": "USDC",
 	"0xf650c3d88d12db855b8bf7d11be6c55a4e07dcc9": "USDT",
 	"0xc11b1268c1a384e55c48c2391d8d480264a3a7f4": "WBTC",
-	"0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407": "ZRX" 
+	"0xccf4429db6322d5c611ee964527d42e5d685dd6a": "WBTC2",
+	"0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407": "ZRX"
 }
 
 window.onload = async function() {
@@ -28,7 +30,13 @@ function generatePlot() {
 	// Generate request urls
 	let urls = []
 	for (const code in coinForCode) {
-		urls.push(baseUrl + code + urlTimeParam)
+		if(coinForCode[code] == "COMP") { // Handle COMP differently due to bad datapoint from early data
+			const minTimestampCOMP = 1604043984 // Oct 30, 2020
+			const urlTimeParamCOMP = "&min_block_timestamp=" + minTimestampCOMP + "&max_block_timestamp=" + maxTimestamp + "&num_buckets=" + numBuckets
+			urls.push(baseUrl + code + urlTimeParamCOMP)
+		} else {
+			urls.push(baseUrl + code + urlTimeParam)
+		}
 	}
 	
 	// batch url requests, then generate plot for each response
